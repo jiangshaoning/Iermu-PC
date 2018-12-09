@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<include>
+  <window pos="0,0,176,-0" layout="center" colorBkgnd="@color/listbg" colorText="@color/white" font="adding:2">
+    <text pos="12, 0" height="50" colorText="@color/pagetext">我的摄像机</text>
+    <text pos="-42, 10" name="ref_camera" height="30" colorText="@color/white"  msgtransparent="0">刷新</text>
+    <hr pos="12,50,176,@2" lineStyle="solid" mode="horizontal" colorLine="@color/pagetext" size="1"/>
+    <listview pos="0,55,-0,-50" sbSkin="_skin.scorllbar" name="camera_list" dividerSize="1">
+      <template itemHeight="30" colorHover="@color/listbg" colorSelected="@color/listsel">
+        <img name="camera_icon" pos="12, 6" skin="_icon.camera" show="1"></img>
+        <gifplayer name="playing_camera" pos="12, 6" skin="_icon.playing" show="0"></gifplayer>
+        <text name="camera_name" pos="40, 8," colorText="@color/white">btn</text>
+      </template>
+    </listview>
+    <window pos="38,-50,-38,-10" name="add_camera" msgtransparent="0">
+    <img pos="0, 10" skin="_icon.add"/>
+    <text pos="[5, 10" align="center">添加设备</text>
+    </window>
+  </window>
+  <window pos="176,0,-0,-0">
+    <tabctrl name="camera_tab" pos="0,0,-0,-0" tabAlign="top" tabSkin="" tabInterSize="2" tabWidth="0" tabHeight="0" focusable="0" show="1" curSel="0">
+
+      <page>
+        <window pos="0,0,-0,-0">
+            <realwnd pos="0,0,-0,-0" name="ffplaywnd"  focusable="0" wndclass="CRealWndDlg" wndname="mainWindow" />
+        </window>
+      </page>
+
+      <!--page colorBkgnd="@color/mainbg">
+        <window name="realplay_wnd" pos="0,0,]0,-0">
+          <realwnd pos="0,0,-0,-0" name="ffplaywnd"  focusable="0" wndclass="CRealWndDlg"  wndname="mainWindow"/>
+        </window>
+      </page-->
+      
+    </tabctrl>
+   </window>
+
+</include>

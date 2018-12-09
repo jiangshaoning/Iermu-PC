@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<skin>
+  <imglist name="_skin.tip_close"	src="PNG:ID_TIP_CLOSE" states="3"/>
+  <imglist name="_skin.sysbtn_close"	src="PNG:ID_SYSBTN_CLOSE" states="3"/>
+  <imglist name="_skin.sysbtn_max"	src="PNG:ID_SYSBTN_MAX" states="3"/>
+  <imglist name="_skin.sysbtn_min"	src="PNG:ID_SYSBTN_MIN" states="3"/>
+  <imglist name="_skin.sysbtn_restore" src="PNG:ID_SYSBTN_RESTORE" states="3"/>
+  <imglist name="_skin.sysbtn_drop_large" src="PNG:ID_SYSBTN_DROP_LARGE" states="3" margin-x="5"/>
+  <imglist name="_skin.sysbtn_drop_little" src="PNG:ID_SYSBTN_DROP_LITTLE" states="3"/>
+  <imglist name="_skin.sysbtn_radio" src="PNG:ID_SYSBTN_RADIO" states="8"/>
+  <imglist name="_skin.sysbtn_focusradio" src="PNG:ID_SYSBTN_FOCUS_RADIO"/>
+  <imglist name="_skin.sysbtn_check" src="PNG:ID_SYSBTN_CHECK" states="8"/>
+  <imglist name="_skin.sysbtn_focuscheck" src="PNG:ID_SYSBTN_FOCUS_CHECK"/>
+  <imgframe name="_skin.border" src="PNG:ID_BORDER" states="2" margin-x="2" margin-y="1"/>
+  <imgframe name="_skin.no_border" src="PNG:ID_NO_BORDER" states="2" margin-x="2" margin-y="1"/>
+	<imglist name="_skin.tab_main" src="PNG:ID_TAB_MAIN" states="3" />
+	<imglist name="_skin.tab_icon" src="PNG:ID_TAB_ICON" states="3" />
+  <imglist name="_skin.page_main" src="PNG:ID_PAGE_MAIN" states="3"/>
+	<imglist name="_skin.white_bg" src="PNG:ID_WHITE_BG" alpha="255" />
+  <imglist name="_skin.no_camera" src="PNG:ID_NO_CAMERA"/>
+  <imglist name="_skin.no_video" src="PNG:ID_NO_VIDEO"/>
+  <imgframe name="_skin.tab_left" src="PNG:ID_TAB_LEFT" states="3" margin="1,1,1,1" />
+	<imgframe name="_skin.shadow" src="PNG:ID_PNG_SHADOW" left="5" top="3" right="5" bottom="7" />
+	<imgframe name="_skin.bg" src="PNG:ID_PNG_BG" />
+  <imgframe name="_skin.player_tools_bg" src="PNG:ID_PLAYER_TOOLS_BG" />
+  <imgframe name="_skin.login_bg" src="PNG:ID_LOGIN_BG" />
+  <imgframe name="_skin.qrcode_bg" src="PNG:ID_QRCODE_BG" />
+  <imgframe name="_skin.set_bg" src="PNG:ID_SET_BG" />
+  <imgframe name="_skin_lcex_header" src="PNG:ID_LCEX_HEADER" states="4" margin-x="2" margin-y="2"/>
+  <imgframe name="_skin_lcex_header_arrow" src="PNG:ID_LCEX_HEADER_ARROW" states="2"  />
+  <imgframe name="_skin.scorllbar" src="PNG:ID_SCORLLBAR" states="3" margin="4" />
+  
+  <imglist name="_skin.sys.dropbtn" src="PNG:SYS_DROPBTN" states="3"/>
+  
+  <imglist name="skin.SliderBackVolume_png" src="PNG:ID_SLIDERBACKVOLUME" />
+  <imglist name="skin.SliderForeVolume_png" src="PNG:ID_SLIDERFOREVOLUME" />
+  <imglist name="skin.SliderPlayThumb_png" src="PNG:ID_SLIDERPLAYTHUMB" states="4" />
+  <imglist name="skin.SliderPlayvol_png" src="PNG:ID_SLIDERPLAYVOLUM" states="3" />
+
+  <imgframe name="_title.text" src="PNG:ID_TITLE_TEXT"/>
+  <imgframe name="_image.head"	src="PNG:ID_HEAD_IMG"/>
+  <imgframe name="_icon.register"	src="PNG:ID_REGISTER_ICON"/>
+  <imgframe name="_icon.add"	src="PNG:ID_ADD_ICON"/>
+  <imgframe name="_icon.camera"	src="PNG:ID_CAMERA_ICON"/>
+  <imgframe name="_icon.camera_gray"	src="PNG:ID_CAMERA_GRAYICON"/>
+  
+  <imglist name="btn.blue"	src="BTN:ID_BLUE_BTN" states="3"/>
+  <imglist name="btn.brown"	src="BTN:ID_BROWN_BTN" states="3"/>
+  <imglist name="btn.blue_little"	src="BTN:ID_BLUE_LITTLE_BTN" states="3"/>
+  <imglist name="btn.blue_large"	src="BTN:ID_BLUE_LARGE_BTN" states="3"/>
+  <imglist name="btn.blue_upright"	src="BTN:ID_BLUE_UPRIGHT_BTN" states="3"/>
+  <imglist name="btn.blue_upleft"	src="BTN:ID_BLUE_UPLEFT_BTN" states="3"/>
+  <imglist name="btn.white"	src="BTN:ID_WHITE_BTN" states="3"/>
+  <imglist name="btn.back"	src="BTN:ID_BACK_BTN" states="4"/>
+  <imglist name="btn.pre"	src="BTN:ID_PRE_BTN" states="4"/>
+  <imglist name="btn.ref"	src="BTN:ID_REF_BTN" states="4"/>
+  <imglist name="btn.white_left"	src="BTN:ID_WHITE_LEFT_BTN" states="3"/>
+  <imglist name="btn.white_middle"	src="BTN:ID_WHITE_MIDDLE_BTN" states="3"/>
+  <imglist name="btn.white_right"	src="BTN:ID_WHITE_RIGHT_BTN" states="3"/>
+  <imglist name="btn.volume" src="BTN:ID_VOLUME_BTN" states="3" />
+  <imglist name="btn.volume_zero" src="BTN:ID_VOLUME_ZERO_BTN" states="3" />
+  <imglist name="btn.cloud_video" src="BTN:ID_CLOUD_VIDEO_BTN" states="3" />
+  <imglist name="btn.snapshot" src="BTN:ID_SNAPSHOT_BTN" states="3" />
+  <imglist name="btn.player_set" src="BTN:ID_PLAYER_SET_BTN" states="3" />
+  <imglist name="btn.four_player" src="BTN:ID_FOUR_PLAYER_BTN" states="3" />
+  <imglist name="btn.face_recognition" src="BTN:ID_FACE_RECOGNITION_BTN" states="3" />
+  <imglist name="btn.record" src="BTN:ID_RECORD_BTN" states="3" />
+  <imglist name="btn.record_stop" src="BTN:ID_RECORD_STOP_BTN" states="3" />
+  <imglist name="btn.refresh" src="BTN:ID_REFRESH_BTN" states="4" />
+  <imglist name="btn.screen_full" src="BTN:ID_SCREEN_FULL_BTN" states="3" />
+  <imglist name="btn.screen_normal" src="BTN:ID_SCREEN_NORMAL_BTN" states="3" />
+
+  <gif name="_icon.loading"	src="GIF:ID_LOADING_ICON"/>
+  <gif name="_icon.playing"	src="GIF:ID_PLAYING_ICON"/>
+</skin>

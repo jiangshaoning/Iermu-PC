@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<SOUI width="356" height="347" appWnd="0" resizable="0" translucent="1" alpha="255">
+  <skin>
+    <!---gifplayer name="playing_icon" pos="12, 6" skin="_icon.loading"></gifplayer-->
+  </skin>
+	<root>
+    <gifplayer name="playing_icon" pos="140, 100" skin="_icon.loading"></gifplayer>
+	</root>
+</SOUI>

@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<SOUI width="-1" height="-1" resizable="1" wndType="normal" toolwindow="1" translucent="0">
+	<!--演示root大小自动计算,注意soui结点width,height的设置，哪一个值需要自动计算就设置为-1-->
+	<root size="-1,-1">
+    <tabctrl name="camera_tab" pos="0,0,-0,-0" tabAlign="top" tabSkin="" tabInterSize="2" tabWidth="0" tabHeight="0" focusable="0" show="1" curSel="0">
+      <page title="camera_tip_page" colorBkgnd="@color/mainbg">
+        <img pos="|-70, |-100" skin="_skin.no_camera"></img>
+        <text pos="|0, |50" offset="-0.5,-0.5">亲,登录后才能看到播放列表哦</text>
+        <text name="login_link" pos="|0, |80" offset="-0.5,-0.5" colorText="@color/blue" msgtransparent="0" cursor="hand">点击登录</text>
+      </page>
+
+      <page title="login_page" colorBkgnd="@color/tipbg">
+        <window pos="|-301, |-203" size="356, 347" skin="_skin.login_bg" colorText="#000000">
+          <imgbtn name="login_close" skin="_skin.tip_close" pos="-25,12" tip="close" animate="1"/>
+          <text pos="48, 44" width="260" align="left" font="bold:1,adding:6">登录爱耳目</text>
+          <text name="sweep_qrcode" pos="48, 62" width="260" align="right" msgtransparent="0" cursor="hand" colorText="@color/blue">扫码登录</text>
+          <edit name="edit_username" class="cls_edit" pos="48,88" width="260" height="34" cueText="邮箱/手机号"></edit>
+          <edit name="edit_passwd" class="cls_edit" pos="48,132" password="1" width="260" height="34" cueText="登录密码"></edit>
+          <text pos="48, 172" width="130" align="left" msgtransparent="0" cursor="hand" >忘记密码</text>
+          <text name="login_message" pos="178, 172" width="130" align="right" msgtransparent="0" cursor="hand" >手机快捷登录></text>
+          <imgbtn name="btn_login" pos="48,206" size="260, 34" skin="btn.blue" colorText="@color/white">登录</imgbtn>
+          <text name="login_enterprise" pos="48, 256" width="260" align="center" msgtransparent="0" cursor="hand" >企业账号登录></text>
+          <window pos="44, 282, -0, -0">
+            <check name="check_passwd" pos="0,20, @96, @30"  class="cls_check" checked="0">记住密码</check>
+            <check name="check_auto_login" pos="96,20, @96, @30"  class="cls_check" checked="0">自动登录</check>
+            <window pos="192,27, @96, @30" msgtransparent="0" cursor="hand">
+              <img pos="0, 0" skin="_icon.register"></img>
+              <text pos="[3, 0">注册账号</text>
+            </window>
+          </window>
+        </window>
+      </page>
+
+      <page title="qrcode_page"  colorBkgnd="@color/tipbg">
+        <window pos="|-301, |-203" size="352, 288" skin="_skin.qrcode_bg" colorText="#000000">
+          <imgbtn name="login_close" skin="_skin.tip_close" pos="-25,12" tip="close" animate="1"/>
+          <text pos="48, 44" width="260" align="left" font="bold:1,adding:6">登录爱耳目</text>
+          <text name="login_passwd" pos="48, 62" width="260" align="right" msgtransparent="0" cursor="hand" colorText="@color/blue">密码登录</text>
+          <img id="300" name="img_qrcode" pos="116, 90" size="120, 120" alpha="255"></img>
+          <window name="ref_qrcode" pos="138, 125" show="0">
+            <text pos="0, 0" width="76" align="center">二维码已过期</text>
+            <imgbtn name="btn_qrcode" pos="0,20" size="76, 30" skin="btn.blue" colorText="@color/white">点击刷新</imgbtn>
+          </window>
+          <text pos="0, 232" width="352" align="center" colorText="@color/brown">打开爱耳目app,扫一扫直接登录</text>
+        </window>
+      </page>
+
+      <page title="message_page"  colorBkgnd="@color/tipbg">
+        <window pos="|-301, |-203" size="356, 347" skin="_skin.login_bg" colorText="#000000">
+          <imgbtn name="login_close" skin="_skin.tip_close" pos="-25,12" tip="close" animate="1"/>
+          <text pos="48, 44" width="260" align="left" font="bold:1,adding:6">登录爱耳目</text>
+          <text name="sweep_qrcode" pos="48, 62" width="260" align="right" msgtransparent="0" cursor="hand" colorText="@color/blue">扫码登录</text>
+          <edit name="edit_phone" class="cls_edit" pos="48,88" width="260" height="34" cueText="手机号"></edit>
+          <edit name="edit_verification_code" class="cls_edit" pos="48,132" width="160" height="34" cueText="短信验证码"></edit>
+          <imgbtn name="btn_verification_code" pos="218,132" size="90, 34" skin="btn.brown">发送验证码</imgbtn>
+          <text pos="48, 172" width="130" align="left" msgtransparent="0" cursor="hand" >忘记密码</text>
+          <text name="login_passwd" pos="178, 172" width="130" align="right" msgtransparent="0" cursor="hand" >使用密码登录></text>
+          <imgbtn name="btn_login" pos="48,206" size="260, 34" skin="btn.blue" colorText="@color/white">登录</imgbtn>
+          <text name="login_enterprise" pos="48, 256" width="260" align="center" msgtransparent="0" cursor="hand" >企业账号登录></text>
+          <window pos="140,310, @96, @30" msgtransparent="0" cursor="hand">
+            <img pos="0, 0" skin="_icon.register"></img>
+            <text pos="[3, 0">注册账号</text>
+          </window>
+        </window>
+      </page>
+
+      <page title="enterprise_page" colorBkgnd="@color/tipbg">
+        <window pos="|-301, |-203" size="356, 347" skin="_skin.login_bg" colorText="#000000">
+          <imgbtn name="login_close" skin="_skin.tip_close" pos="-25,12" tip="close" animate="1"/>
+          <text pos="48, 44" width="260" align="left" font="bold:1,adding:6">登录爱耳目</text>
+          <text name="login_passwd" pos="48, 62" width="260" align="right" msgtransparent="0" cursor="hand">返回></text>
+          <edit class="cls_edit" pos="48,88" width="260" height="34"></edit>
+          <edit name="edit_enterprise" class="cls_edit_nb" pos="50,90" width="60" height="30" cueText="企业名"></edit>
+          <text pos="110, 90" width="20" align="center">_</text>
+          <edit name="edit_enterprise_name" class="cls_edit_nb" pos="130,90" width="156" height="30" cueText="用户名"></edit>
+          <edit name="edit_enterprise_passwd" class="cls_edit" pos="48,132" password="1" width="260" height="34" cueText="请输入密码"></edit>
+          <text pos="48, 172" width="260" align="center">如果忘记密码，请联系企业管理员找回密码</text>
+          <imgbtn name="btn_login" pos="48,206" size="260, 34" skin="btn.blue" colorText="@color/white">登录</imgbtn>
+          <window pos="44, 282, -0, -0">
+            <check name="check_passwd" pos="0,20, @96, @30"  class="cls_check" checked="0">记住密码</check>
+            <check name="check_auto_login" pos="96,20, @96, @30"  class="cls_check" checked="0">自动登录</check>
+            <window pos="192,27, @96, @30" msgtransparent="0" cursor="hand">
+              <img pos="0, 0" skin="_icon.register"></img>
+              <text pos="[3, 0">注册账号</text>
+            </window>
+          </window>
+        </window>
+      </page>
+
+      <page title="nor_player_page" colorBkgnd="#000000ff">
+
+        <window name="player_tools" pos="0, -40, -0, -0" colorBkgnd="@color/toolsbg">
+          <imgbtn name="btn_volume" data="1" pos="20,12" cursor="hand" size="16,16" tip="静音" animate="1" skin="btn.volume"/>
+          <imgbtn name="btn_volume_zero" data="1" pos="20,12" cursor="hand" size="16,16" tip="音量" animate="1" skin="btn.volume_zero" show="0"/>
+          <sliderbar name="volumeSlider" pos="[0,14" thumbInRail="0" cursor="hand" width="100" value="30" min="-182" max="73" thumbSkin="skin.SliderPlayvol_png" posSkin="skin.SliderForeVolume_png" bkgndSkin="skin.SliderBackVolume_png"/>
+          <imgbtn name="btn_cloud_video" pos="-260,10" cursor="hand" tip="回看录像" animate="1" skin="btn.cloud_video"/>
+          <imgbtn name="btn_snapshot" pos="[20,10" cursor="hand" tip="截屏" animate="1" skin="btn.snapshot"/>
+          <imgbtn name="btn_player_set" pos="[20,10" cursor="hand" tip="设置" animate="1" skin="btn.player_set"/>
+          <imgbtn name="btn_four_player" pos="[20,10" cursor="hand" tip="四分屏" animate="1" skin="btn.four_player"/>
+          <imgbtn name="btn_face_recognition" pos="[20,10" cursor="hand" tip="人脸识别" animate="1" skin="btn.face_recognition"/>
+          <imgbtn name="btn_screen_full" pos="[20,10" cursor="hand" tip="全屏" animate="1" skin="btn.screen_full"/>
+        </window>
+      </page>
+
+      <page title="ai_player_page">
+
+        <window pos="0,0,-244,-184"  colorBkgnd="#000000ff">
+
+          <window name="player_tools" pos="50, -80, -50, -30" skin="_skin.player_tools_bg">
+            <imgbtn name="btn_volume" data="1" pos="20,16" cursor="hand" size="16,16" tip="静音" animate="1" skin="btn.volume" />
+            <imgbtn name="btn_volume_zero" data="1" pos="20,16" cursor="hand" size="16,16" tip="音量" animate="1" skin="btn.volume_zero" show="0"/>
+            <sliderbar name="volumeSlider" pos="[0,18" thumbInRail="0" cursor="hand" width="100" value="50" min="-182" max="73" thumbSkin="skin.SliderPlayvol_png" posSkin="skin.SliderForeVolume_png" bkgndSkin="skin.SliderBackVolume_png"  />
+          </window>
+        </window>
+        <window pos="-222,14,-0,-0">
+          <text pos="0, 2" colorText="@color/aidestext" font="adding:2">识别结果</text>
+        </window>
+        <window pos="14,-184,-244,-0">
+          <text pos="0, 8" colorText="@color/aidestext" font="adding:2">摄像机抓拍人脸</text>
+          <hr pos="[14,18,-0,@2" lineStyle="solid" mode="horizontal" colorLine="@color/aidestext" size="1"/>
+        </window>
+
+      </page>
+
+    </tabctrl>
+	</root>
+</SOUI>

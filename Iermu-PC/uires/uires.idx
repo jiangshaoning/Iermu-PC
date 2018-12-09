@@ -1,0 +1,97 @@
+﻿<?xml version="1.0"?>
+<resource>
+  <UIDEF>
+    <file name="XML_INIT" path="uidef\init.xml" />
+  </UIDEF>
+  <LAYOUT>
+    <file name="XML_MAINWND" path="xml\dlg_main.xml" />
+    <file name="XML_MYCAMERA" path="xml\dlg_mycamera.xml" />
+    <file name="XML_SETWND" path="xml\dlg_userwnd.xml" />
+    <file name="XML_REALWND" path="xml\dlg_realwnd.xml" />
+    <file name="XML_REALWND_DEV" path="xml\dlg_realwnd_Dev.xml" />
+    <file name="XML_LOCALDEVICE" path="xml\dlg_localdevice.xml" />
+    <file name="XML_LOCALFILE" path="xml\dlg_localfile.xml" />
+    <file name="XML_LOADING" path="xml\dlg_loading.xml" />
+  </LAYOUT>
+  <values>
+    <file name="string" path="values\string.xml" />
+    <file name="color" path="values\color.xml" />
+    <file name="skin" path="values\skin.xml" />
+  </values>
+  <PNG>
+    <file name="ID_TITLE_TEXT" path="image\title_text.png" />
+    <file name="ID_TIP_CLOSE" path="image\tip_close.png"/>
+    <file name="ID_SYSBTN_CLOSE" path="image\sysbtn_close.png"/>
+    <file name="ID_SYSBTN_MAX" path="image\sysbtn_max.png"/>
+    <file name="ID_SYSBTN_MIN" path="image\sysbtn_min.png"/>
+    <file name="ID_SYSBTN_RESTORE" path="image\sysbtn_restore.png"/>
+    <file name="ID_SYSBTN_DROP_LARGE" path="image\sysbtn_drop_large.png"/>
+    <file name="ID_SYSBTN_DROP_LITTLE" path="image\sysbtn_drop_little.png"/>
+    <file name="ID_SYSBTN_RADIO" path="image\sysbtn_radio.png"/>
+    <file name="ID_SYSBTN_FOCUS_RADIO" path="image\sysbtn_focus_radio.png"/>
+    <file name="ID_SYSBTN_CHECK" path="image\sysbtn_check.png"/>
+    <file name="ID_SYSBTN_FOCUS_CHECK" path="image\sysbtn_focus_check.png"/>
+    <file name="ID_TAB_MAIN" path="image\skin_tab_main.png" />
+    <file name="ID_TAB_ICON" path="image\skin_tab_icon.png" />
+    <file name="ID_PAGE_MAIN" path="image\skin_page_main.png" />
+    <file name="ID_BORDER" path="image\skin_border.png" />
+    <file name="ID_NO_BORDER" path="image\skin_no_border.png" />
+    <file name="ID_TAB_LEFT" path="image\tab_left.png" />
+    <file name="ID_PNG_SHADOW" path="image\shadow.png" />
+    <file name="ID_LOGIN_BG" path="image\login_bg.png" />
+    <file name="ID_QRCODE_BG" path="image\qrcode_bg.png" />
+    <file name="ID_SET_BG" path="image\set_bg.png" />
+    <file name="ID_PNG_BG" path="image\bg.png" />
+    <file name="ID_WHITE_BG" path="image\white_bg.png" />
+    <file name="ID_NO_CAMERA" path="image\no_camera.png" />
+    <file name="ID_NO_VIDEO" path="image\no_video.png" />
+    <file name="ID_PLAYER_TOOLS_BG" path="image\playertools_bg.png" />
+    <file name="ID_LCEX_HEADER" path="image\lcex_header.png"/>
+    <file name="ID_LCEX_HEADER_ARROW" path="image\lcex_header_arrow.png"/>
+    <file name="ID_SLIDERBACKVOLUME" path="image\SliderBackVolume.png"/>
+    <file name="ID_SLIDERFOREVOLUME" path="image\SliderForeVolume.png"/>
+    <file name="ID_SLIDERPLAYTHUMB" path="image\SliderPlayThumb.png"/>
+    <file name="ID_SLIDERPLAYVOLUM" path="image\SliderPlayvolum.png"/>
+    <file name="ID_SCORLLBAR" path="image\vscrollbar.png" />
+    <file name ="ID_HEAD_IMG"  path="image\head_Image.png" />
+    <file name ="ID_HEAD_MASK"  path="image\head_mask.png" />
+    <file name ="ID_REGISTER_ICON"  path="image\register_icon.png" />
+    <file name ="ID_ADD_ICON"  path="image\add_icon.png" />
+    <file name ="ID_CAMERA_ICON"  path="image\camera_icon.png" />
+    <file name ="ID_CAMERA_GRAYICON"  path="image\camera_grayicon.png" />
+  </PNG>
+  <BTN>
+    <file name="ID_BLUE_BTN" path="image\btn_blue.png"/>
+    <file name="ID_BROWN_BTN" path="image\btn_brown.png"/>
+    <file name="ID_BLUE_LITTLE_BTN" path="image\btn_blue_little.png"/>
+    <file name="ID_BLUE_LARGE_BTN" path="image\btn_blue_large.png"/>
+    <file name="ID_BLUE_UPRIGHT_BTN" path="image\btn_blue_upright.png"/>
+    <file name="ID_BLUE_UPLEFT_BTN" path="image\btn_blue_upleft.png"/>
+    <file name="ID_WHITE_BTN" path="image\btn_white.png"/>
+    <file name="ID_BACK_BTN" path="image\btn_back.png"/>
+    <file name="ID_PRE_BTN" path="image\btn_pre.png"/>
+    <file name="ID_REF_BTN" path="image\btn_ref.png"/>
+    <file name="ID_WHITE_LEFT_BTN" path="image\btn_white_left.png"/>
+    <file name="ID_WHITE_RIGHT_BTN" path="image\btn_white_right.png"/>
+    <file name="ID_WHITE_MIDDLE_BTN" path="image\btn_white_midlle.png"/>
+    <file name="ID_VOLUME_BTN" path="image\btn_volume.png" />
+    <file name="ID_VOLUME_ZERO_BTN" path="image\btn_volume_zero.png" />
+    <file name="ID_CLOUD_VIDEO_BTN" path="image\btn_cloud_video.png" />
+    <file name="ID_SNAPSHOT_BTN" path="image\btn_snapshot.png" />
+    <file name="ID_PLAYER_SET_BTN" path="image\btn_player_set.png" />
+    <file name="ID_FOUR_PLAYER_BTN" path="image\btn_four_player.png" />
+    <file name="ID_FACE_RECOGNITION_BTN" path="image\btn_face_recognition.png" />
+    <file name="ID_RECORD_BTN" path="image\btn_record.png" />
+    <file name="ID_RECORD_STOP_BTN" path="image\btn_record_stop.png" />
+    <file name="ID_REFRESH_BTN" path="image\btn_refresh.png" />
+    <file name="ID_SCREEN_FULL_BTN" path="image\btn_screen_full.png" />
+    <file name="ID_SCREEN_NORMAL_BTN" path="image\btn_screen_normal.png" />
+  </BTN>
+  <GIF>
+    <file name ="ID_LOADING_ICON"  path="image\loading6.gif" />
+    <file name ="ID_PLAYING_ICON"  path="image\playing_icon.gif" />
+  </GIF>
+  <ICON>
+    <file name="ICON_LOGO" path="image\Iermu-PC.ico" />
+  </ICON>
+</resource>

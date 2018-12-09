@@ -1,0 +1,30 @@
+﻿<SOUI name="mainWindow" title="@string/title" bigIcon="ICON_LOGO:48" smallIcon="ICON_LOGO:16" width="1342" height="720"  minsize="410,200" margin="5,5,5,5"  resizable="1" wndType="appMain" appWnd="1">
+    <root colorBkgnd="@color/titlebg">
+      <caption  pos="0,0,-0,64" show="1" font="adding:0">
+        <icon pos="15,10" src="ICON_LOGO:48"/>
+        <img pos="65,10" skin="_title.text"></img>
+        <imgbtn name="btn_close" skin="_skin.sysbtn_close"    pos="-45,20" tip="close" animate="1"/>
+        <imgbtn name="btn_max" skin="_skin.sysbtn_max"  pos="-83,20" animate="1" />
+        <imgbtn name="btn_restore" skin="_skin.sysbtn_restore"  pos="-83,20" show="0" animate="1" />
+        <imgbtn name="btn_min" skin="_skin.sysbtn_min" pos="-121,20" animate="1" />
+      </caption>
+    
+      <tabctrl pos="0,[0,-4,-4" tabPos="100" curSel="0" focusable="0" animateSteps="10" animateType="1" tabSkin="_skin.page_main" tabAlign="left" iconSkin="_skin.tab_icon" icon-x="25" icon-y="25" tabWidth="74" tabHeight="74" colorBkgnd="@color/tabbg">
+        <page>
+          <include src="layout:XML_MYCAMERA"/>
+        </page>
+        <page>
+          <include src="layout:XML_LOCALDEVICE" />
+        </page>
+        <page>
+          <include src="layout:XML_LOCALFILE" />
+        </page>
+      </tabctrl>
+      <window pos="0,80,@72,@72">
+        <!--img name="user_link" pos="|-26, |-26, @52, @52" skin="_image.head"></img-->
+        <imageMask name="user_link" pos="|-26, |-26, @52, @52" skin="_image.head" mask="PNG:ID_HEAD_MASK" msgtransparent="0"></imageMask>   
+      </window>
+    </root>
+</SOUI>
+
+

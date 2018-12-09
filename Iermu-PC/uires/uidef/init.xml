@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UIDEF>
+  <font face="微软雅黑" size="12"/>
+
+  <string src="values:string" />
+  <skin src="values:skin"/>
+  <color src="values:color"/>
+
+
+  <style>
+    <class name="cls_box" ncSkin="_skin.border" cueColor="@color/gray" margin-x="1" margin-y="1" itemSkin="_skin.page_main" colorSelText="@color/blue" colorItemBkgnd="@color/white" colorItemSelBkgnd="@color/brown" colorBkgnd="@color/white"/>
+    <class name="cls_edit" ncSkin="_skin.border" cueColor="@color/gray" inset="5, 0" margin-x="1" margin-y="1" colorSelText="#FFFFFF" colorItemBkgnd="#0AB4FA" colorItemSelBkgnd="#000088" colorBkgnd="#ffffff"/>
+    <class name="cls_edit_nb" ncSkin="_skin.no_border" cueColor="@color/gray" inset="5, 0" margin-x="1" margin-y="1" colorSelText="#FFFFFF" colorItemBkgnd="#0AB4FA" colorItemSelBkgnd="#000088" colorBkgnd="#ffffff"/>
+    <class name="cls_radio" focusSkin="_skin.sysbtn_focusradio" skin="_skin.sysbtn_radio"/>
+    <class name="cls_check" focusSkin="_skin.sysbtn_focuscheck" skin="_skin.sysbtn_check"/>
+    <!--全局style对象-->
+    <class name="cls_dlg_frame" skin="_skin.sys.wnd.bkgnd" colorText="#000000" margin-x="0"/>
+    <class name="cls_btn_link" cursor="hand" colorHover="#0A84D2" />
+    <class name="cls_btn_weblink" cursor="hand" colorText="@color/red" font="underline:1,italic:1" fontPush="underline:1,italic:1" fontHover="underline:1,italic:1" />
+    <class name="cls_rich_link" cursor="hand" font="size:12" fontPush="underline:1,size:12" fontHover="underline:1,size:12" colorText="#1670eb" colorHover="#1670eb"/>
+    <!--class name="normalbtn" font="" colorText="#385e8b" colorTextDisable="#91a7c0" textMode="0x25" cursor="hand" margin-x="0"/>
+    <class name="cls_btn_weblink" cursor="hand" colorText="#1e78d5" colorTextHover="#1e78d5" font="italic:1" fontHover="underline:1,italic:1" /-->
+  </style>
+
+  <objattr>
+  </objattr>
+</UIDEF>

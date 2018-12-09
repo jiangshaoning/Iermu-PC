@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<SOUI width="280" height="355" appWnd="0" resizable="0" translucent="1" alpha="255">
+  <!--skin>
+    <imgframe name="_skin.qrcode_bg" src="PNG:ID_QRCODE_BG" />
+  </skin-->
+	<root skin="_skin.set_bg">
+    <imgbtn name="user_close" skin="_skin.tip_close" pos="-25,12" tip="close" animate="1"/>
+    <imageMask name="user_avatar" pos="|-26, 38, @52, @52" skin="_image.head" mask="PNG:ID_HEAD_MASK"></imageMask>
+    <text name="user_name" pos="0, 98, -0, 112" align="center"></text>
+    <text pos="40, 154">昵称</text>
+    <text pos="120, 154" name="name">123</text>
+    <text pos="40, 188">邮箱</text>
+    <text pos="120, 188" name="email">123</text>
+    <text pos="40, 222">手机</text>
+    <text pos="120, 222" name="phone">123</text>
+    <text pos="40, 256">百度账号</text>
+    <text pos="120, 256" name="bd_account">未绑定</text>
+    <imgbtn name="quit_login" pos="30,[28" size="220, 34" skin="btn.blue" colorText="@color/white">退出登录</imgbtn>
+	</root>
+</SOUI>

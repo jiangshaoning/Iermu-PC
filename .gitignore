@@ -1,0 +1,66 @@
+##ignore this file##
+/target/ 
+
+.classpath
+.project
+.settings      
+ ##filter databfile¡¢sln file##
+*.mdb  
+*.ldb  
+*.sln    
+##class file##
+*.com  
+*.class  
+*.obj
+*.sbr 
+*.tlog
+*.log
+*.o  
+*.so  
+# compression file
+*.7z  
+*.dmg  
+*.gz  
+*.iso  
+*.jar  
+*.rar  
+*.tar  
+*.zip  
+*.via
+*.tmp
+*.err 
+# OS generated files #  
+.DS_Store  
+.DS_Store?  
+._*  
+.Spotlight-V100  
+.Trashes  
+Icon?  
+ehthumbs.db  
+
+
+# for windows
+Thumbs.db
+
+# for VC6
+
+Debug
+Release
+*.ncb
+*.opt
+*.plg
+*.aps
+
+# for VC2010
+
+*.opensdf
+*.suo
+*.sdf
+*.vcxproj.user
+*.vsp
+ipch
+
+# for Qt
+
+*.pro.user
+build-*

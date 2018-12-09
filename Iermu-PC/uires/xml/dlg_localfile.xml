@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<include>
+  <window pos="0,0,176,-0" colorBkgnd="@color/listbg" colorText="@color/pagetext" font="adding:2">
+    <text pos="12, 0" height="50">本地文件</text>
+    <hr pos="12,50,176,@2" lineStyle="solid" mode="horizontal" colorLine="@color/pagetext" size="1"/>
+
+  </window>
+  <window pos="176,0,-0,-0">
+    <realwnd pos="0,0,-0,-0" name="ffplaywnd"  focusable="0" wndclass="CRealWndDlg_File" wndname="mainWindow" />
+  </window>
+</include>

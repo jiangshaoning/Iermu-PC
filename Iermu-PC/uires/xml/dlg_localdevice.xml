@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<include>
+  <window pos="0,0,176,-0" layout="center" colorBkgnd="@color/listbg" colorText="@color/pagetext" font="adding:2">
+    <text pos="12, 0" height="50">本地设备</text>
+    <text pos="-42, 10" name="ref_device" height="30" colorText="@color/white"  msgtransparent="0">查询</text>
+    <hr pos="12,50,176,@2" lineStyle="solid" mode="horizontal" colorLine="@color/pagetext" size="1"/>
+    <text pos="12, 55">本机IP</text>
+    <comboview name="cbv_iplist" class="cls_edit" btnSkin="_skin.sysbtn_drop_large" pos="12, 85" width="152" height="30" align="center" dropDown="0" dropHeight="200" animateTime="100" curSel="0">
+      <liststyle class="cls_edit" colorSelText="#FFFFFF" colorItemBkgnd="#0AB4FA" colorItemSelBkgnd="#000088" colorBkgnd="#ffffff">
+        <template itemHeight="30" colorHover="#cccccc" colorSelected="#0AB4FA">
+          <text id="1" pos="5,5">127.0.0.1</text>
+        </template>
+      </liststyle>
+      <editstyle vcenter="1" colorText="@color/black" align="left" colorBkgnd="#FFFFFF" cueText="" cueColor="@color/gray"/>
+    </comboview>
+
+    <listview pos="0,120,-0,-0" sbSkin="_skin.scorllbar" name="device_list" dividerSize="1">
+      <template itemHeight="30" colorHover="@color/listbg" colorSelected="@color/listsel">
+        <img name="device_icon" pos="12, 6" skin="_icon.camera" show="1"></img>
+        <gifplayer name="playing_device" pos="12, 6" skin="_icon.playing" show="0"></gifplayer>
+        <text name="device_name" pos="40, 8," colorText="@color/white">btn</text>
+      </template>
+    </listview>
+  </window>
+  <window pos="176,0,-0,-0">
+    <realwnd pos="0,0,-0,-0" name="ffplaywnd_dev"  focusable="0" wndclass="CRealWndDlg_Dev" wndname="mainWindow" />
+  </window>
+</include>

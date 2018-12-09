@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<color>
+  <red value="rgb(255,0,0)"/>
+  <green value="rgb(0,255,0)"/>
+  <blue value="rgb(0,172,238)"/>
+  <dpblue value="rgb(10,180,250)"/>
+  <titlebg value="#29282f"/>
+  <tabbg value="#2e3039"/>
+  <listbg value="#3d4049"/>
+  <mainbg value="#d5d5d5"/>
+  <tipbg value="#89898b"/>
+  <toolsbg value="#60636e"/>
+  <pagetext value="#9e9e9e"/>
+  <aidestext value="#808080"/>
+  <graytext value="#828282"/>
+  <listsel value="#25262b"/>
+  <white value="#fafafa"/>
+  <brown value="#a4a4a4"/>
+  <black value="#333333"/>
+  <gray value="#999999"/>
+</color> 
+ 
