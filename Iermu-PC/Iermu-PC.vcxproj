@@ -195,6 +195,7 @@
     <ClCompile Include="MainDlg.cpp" />
     <ClCompile Include="player\RealWndDlg.cpp" />
     <ClCompile Include="player\RealWndDlg_Dev.cpp" />
+    <ClCompile Include="player\RealWndDlg_File.cpp" />
     <ClCompile Include="player\SouiRealWndHandler.cpp" />
     <ClCompile Include="socket\threadObject.cpp" />
     <ClCompile Include="socket\UpnpTool.cpp" />
@@ -214,13 +215,14 @@
     <ClInclude Include="adapter\CameraListAdapter.h" />
     <ClInclude Include="adapter\DeviceListAdapter.h" />
     <ClInclude Include="adapter\FixListAdapter.h" />
-    <ClInclude Include="adapter\PlayListAdapter.h" />
+    <ClInclude Include="adapter\FileListAdapter.h" />
+    <ClInclude Include="custom\AddPopupWnd.h" />
     <ClInclude Include="custom\FilesHelp.h" />
     <ClInclude Include="custom\MagnetFrame.h" />
     <ClInclude Include="custom\SerializeObj.h" />
     <ClInclude Include="custom\SGifPlayer.h" />
     <ClInclude Include="custom\SImageMaskWnd.h" />
-    <ClInclude Include="custom\SSetPopupWnd.h" />
+    <ClInclude Include="custom\UserPopupWnd.h" />
     <ClInclude Include="custom\SSkinGif.h" />
     <ClInclude Include="custom\SSwitch.h" />
     <ClInclude Include="httpclient\HttpConnect.h" />
@@ -228,6 +230,7 @@
     <ClInclude Include="MainDlg.h" />
     <ClInclude Include="player\RealWndDlg.h" />
     <ClInclude Include="player\RealWndDlg_Dev.h" />
+    <ClInclude Include="player\RealWndDlg_File.h" />
     <ClInclude Include="player\SouiRealWndHandler.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="socket\threadObject.h" />
@@ -265,7 +268,7 @@
       <SubType>Designer</SubType>
     </Xml>
     <Xml Include="uires\values\string.xml" />
-    <Xml Include="uires\xml\dlg_loading.xml">
+    <Xml Include="uires\xml\pop_loading.xml">
       <SubType>Designer</SubType>
     </Xml>
     <Xml Include="uires\xml\dlg_localdevice.xml">
@@ -277,7 +280,8 @@
     <Xml Include="uires\xml\dlg_realwnd_Dev.xml">
       <SubType>Designer</SubType>
     </Xml>
-    <Xml Include="uires\xml\dlg_userwnd.xml">
+    <Xml Include="uires\xml\dlg_realwnd_File.xml" />
+    <Xml Include="uires\xml\pop_userwnd.xml">
       <SubType>Designer</SubType>
     </Xml>
     <Xml Include="uires\xml\dlg_main.xml">
@@ -289,6 +293,7 @@
     <Xml Include="uires\xml\dlg_realwnd.xml">
       <SubType>Designer</SubType>
     </Xml>
+    <Xml Include="uires\xml\pop_addwnd.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

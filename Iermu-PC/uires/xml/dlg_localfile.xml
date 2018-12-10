@@ -6,6 +6,6 @@
 
   </window>
   <window pos="176,0,-0,-0">
-    <realwnd pos="0,0,-0,-0" name="ffplaywnd"  focusable="0" wndclass="CRealWndDlg_File" wndname="mainWindow" />
+    <realwnd pos="0,0,-0,-0" name="ffplaywnd_file"  focusable="0" wndclass="CRealWndDlg_File" wndname="mainWindow" />
   </window>
 </include>

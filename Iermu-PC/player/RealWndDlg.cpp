@@ -68,6 +68,15 @@ LRESULT CRealWndDlg::OnOpenLogin(UINT uMsg, WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
+LRESULT CRealWndDlg::OnCameraTipPage(UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+	m_main_dlg->m_loginInfo.user = "";
+	m_main_dlg->m_loginInfo.passwd = "";
+	saveUserInfo();
+	CameraOnCLoseLoginTip();
+	return 0;
+}
+
 //∆’Õ®’À∫≈√‹¬Îµ«¬º
 void CRealWndDlg::CameraOnBtnLogin()
 {
@@ -249,15 +258,20 @@ void CRealWndDlg::loadUserInfo()
 			FindChildByName2<SCheckBox>(L"check_passwd")->SetCheck(TRUE);
 			break;
 		case 2:
+			m_main_dlg->m_loginInfo.user = lg.getLoginUser();
+			m_main_dlg->m_loginInfo.passwd = lg.getLoginPasswd();
 			m_main_dlg->m_loginInfo.token = lg.getToken();
 			m_main_dlg->m_loginInfo.refToken = lg.getRefreshToken();
 			m_main_dlg->m_loginInfo.uid = lg.getUid();
 			FindChildByName2<SCheckBox>(L"check_auto_login")->SetCheck(TRUE);
-			m_main_dlg->loadDeviceInfo();
-			m_main_dlg->GetCameraList();
-			m_main_dlg->LoadAvatar();
-			m_main_dlg->GetUserInfoRequest();
-			CameraOnSwitchNorPlayer();
+			if (m_main_dlg->m_loginInfo.user.size() > 0 && m_main_dlg->m_loginInfo.passwd.size() > 0)
+			{
+				m_main_dlg->LoadAvatar();
+				m_main_dlg->GetUserInfoRequest();
+				m_main_dlg->loadDeviceInfo();
+				m_main_dlg->GetCameraList();
+				CameraOnSwitchNorPlayer();
+			}
 			break;
 		case 3:
 			m_main_dlg->m_loginInfo.user = lg.getLoginUser();
@@ -269,11 +283,14 @@ void CRealWndDlg::loadUserInfo()
 			FindChildByName2<SEdit>(L"edit_passwd")->SetWindowTextW(S_CA2T(m_main_dlg->m_loginInfo.passwd.c_str()));
 			FindChildByName2<SCheckBox>(L"check_passwd")->SetCheck(TRUE);
 			FindChildByName2<SCheckBox>(L"check_auto_login")->SetCheck(TRUE);
-			m_main_dlg->LoadAvatar();
-			m_main_dlg->GetUserInfoRequest();
-			m_main_dlg->loadDeviceInfo();
-			m_main_dlg->GetCameraList();
-			CameraOnSwitchNorPlayer();
+			if (m_main_dlg->m_loginInfo.user.size() > 0 && m_main_dlg->m_loginInfo.passwd.size() > 0)
+			{
+				m_main_dlg->LoadAvatar();
+				m_main_dlg->GetUserInfoRequest();
+				m_main_dlg->loadDeviceInfo();
+				m_main_dlg->GetCameraList();
+				CameraOnSwitchNorPlayer();
+			}
 			break;
 		default:
 			m_main_dlg->m_loginInfo.type = 0;

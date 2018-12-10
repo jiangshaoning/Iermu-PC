@@ -38,6 +38,7 @@ private:
 	void OnMouseMove(UINT nFlags, CPoint point);
 	BOOL OnMouseWheel(UINT nFlags, short zDelta, CPoint point);
 	LRESULT OnInitRealWnd(UINT uMsg, WPARAM wParam, LPARAM lParam);				//初始化界面和播放器
+	LRESULT OnCameraTipPage(UINT uMsg, WPARAM wParam, LPARAM lParam);			//进入第一个界面
 	LRESULT OnOpenLogin(UINT uMsg, WPARAM wParam, LPARAM lParam);				//打开登录界面
 	LRESULT openVideo(UINT uMsg, WPARAM wParam, LPARAM lParam);		
 	LRESULT closeVideo(UINT uMsg, WPARAM wParam, LPARAM lParam);
@@ -72,10 +73,11 @@ protected:
 		MSG_WM_MOUSEMOVE(OnMouseMove)
 		MSG_WM_MOUSEWHEEL(OnMouseWheel)
 		MESSAGE_HANDLER_EX(MS_INIT_REALWND, OnInitRealWnd)
+		MESSAGE_HANDLER_EX(MS_OPEN_TIPPAGE, OnCameraTipPage)
 		MESSAGE_HANDLER_EX(MS_OPEN_LOGIN, OnOpenLogin)
 		MESSAGE_HANDLER_EX(MS_OPENVIDEO_REALWND, openVideo)
 		MESSAGE_HANDLER_EX(MS_CLOSEVIDEO_REALWND, closeVideo)
-		MESSAGE_HANDLER_EX(MSG_FANPLAYER, playVideo)		//播放器过来的渲染消息
+		MESSAGE_HANDLER_EX(MSG_FANPLAYER, playVideo)				//播放器过来的渲染消息
 		MESSAGE_HANDLER(WM_WINREQUEST_TASK, OnMsg_HTTP_TASK)
         CHAIN_MSG_MAP(SHostDialog)
         REFLECT_NOTIFICATIONS_EX()

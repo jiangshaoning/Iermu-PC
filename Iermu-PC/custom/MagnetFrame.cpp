@@ -246,7 +246,8 @@ LRESULT CALLBACK CMagnetFrame::MagnetWndProc(HWND hWnd, UINT uMsg, WPARAM wp, LP
                 }
             }
             
-        }else if(!wd.bFromThis)
+        }
+		else if(!wd.bFromThis)
         {//附属窗口移动,更新与主窗口的吸附关系
              AtatchInfo ai = pThis->CalcAttachMode(hWnd);
              //自动吸附
@@ -283,10 +284,26 @@ LRESULT CALLBACK CMagnetFrame::MagnetWndProc(HWND hWnd, UINT uMsg, WPARAM wp, LP
                 case AM_BOTTOM:
                 pWndPos->y = rcMain.bottom;
                     break;
+				case AM_CENTER:
+				pWndPos->x = rcMain.left + (rcMain.Width() - rcSub.Width()) / 2;
+					break;
                 }
                 
                 switch(ai.am)
                 {
+					case AM_CENTER:
+					{
+						switch (ai.aa)
+						{
+						case AA_CENTER:
+							pWndPos->y = rcMain.top + (rcMain.Height() - rcSub.Height()) / 2;
+							break;
+						case AA_BOTTOM:
+							pWndPos->y = rcMain.bottom - rcSub.Height();
+							break;
+						}
+					}
+					break;
                 case AM_LEFT:case AM_RIGHT:
                     {
                         switch(ai.aa)

@@ -2,6 +2,8 @@
 #include "SouiRealWndHandler.h"
 #include "RealWndDlg.h"
 #include "RealWndDlg_Dev.h"
+#include "RealWndDlg_File.h"
+
 //#include "RealWndDlg_URL.h"
 namespace SOUI
 {
@@ -33,27 +35,13 @@ namespace SOUI
 			pRealWnd->SetData(wndDlg_Dev);
 			return wndDlg_Dev->m_hWnd;
 		}
-		//else  if (param.m_strClassName == _T("CRealWndDlg_ABOUT"))
-		//{
-		//	SHostWnd *wndDlg_about = new SHostWnd(_T("layout:XML_Readwnd_about"));
-		//	wndDlg_about->Create(pRealWnd->GetContainer()->GetHostHwnd(), WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON, 0, 0, 0, 0, 0);
-		//	pRealWnd->SetData(wndDlg_about);
-		//	return wndDlg_about->m_hWnd;
-		//}
-		//else  if (param.m_strClassName == _T("CRealWndDlg_DEPOT"))
-		//{
-		//	SHostWnd *wndDlg_depot = new SHostWnd(_T("LAYOUT:XML_Readwnd_depot"));
-		//	wndDlg_depot->Create(pRealWnd->GetContainer()->GetHostHwnd(), WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON, 0, 0, 0, 0, 0);
-		//	pRealWnd->SetData(wndDlg_depot);
-		//	return wndDlg_depot->m_hWnd;
-		//}
-		//else  if (param.m_strClassName == _T("CRealWndDlg_SKIN"))
-		//{
-		//	SHostWnd *wndDlg_SKIN = new SHostWnd(_T("LAYOUT:XML_Readwnd_skin"));
-		//	wndDlg_SKIN->Create(pRealWnd->GetContainer()->GetHostHwnd(), WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON, 0, 0, 0, 0, 0);
-		//	pRealWnd->SetData(wndDlg_SKIN);
-		//	return wndDlg_SKIN->m_hWnd;
-		//}
+		else  if (param.m_strClassName == _T("CRealWndDlg_File"))
+		{
+			SHostWnd *wndDlg_File = new CRealWndDlg_File;
+			wndDlg_File->Create(pRealWnd->GetContainer()->GetHostHwnd(), WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | WS_CLIPSIBLINGS, 0, 0, 0, 0, 0);
+			pRealWnd->SetData(wndDlg_File);
+			return wndDlg_File->m_hWnd;
+		}
 		else
         {
             return 0;

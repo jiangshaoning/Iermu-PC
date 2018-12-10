@@ -6,12 +6,14 @@
   <LAYOUT>
     <file name="XML_MAINWND" path="xml\dlg_main.xml" />
     <file name="XML_MYCAMERA" path="xml\dlg_mycamera.xml" />
-    <file name="XML_SETWND" path="xml\dlg_userwnd.xml" />
     <file name="XML_REALWND" path="xml\dlg_realwnd.xml" />
     <file name="XML_REALWND_DEV" path="xml\dlg_realwnd_Dev.xml" />
+    <file name="XML_REALWND_FILE" path="xml\dlg_realwnd_File.xml" />
     <file name="XML_LOCALDEVICE" path="xml\dlg_localdevice.xml" />
     <file name="XML_LOCALFILE" path="xml\dlg_localfile.xml" />
-    <file name="XML_LOADING" path="xml\dlg_loading.xml" />
+    <file name="XML_LOADING" path="xml\pop_loading.xml" />
+    <file name="XML_USERWND" path="xml\pop_userwnd.xml" />
+    <file name="XML_ADDWND" path="xml\pop_addwnd.xml" />
   </LAYOUT>
   <values>
     <file name="string" path="values\string.xml" />

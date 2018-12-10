@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<SOUI width="340" height="265" appWnd="0" resizable="0" translucent="1" alpha="255">
+	<root skin="_skin.qrcode_bg">
+    <imgbtn name="add_close" skin="_skin.tip_close" pos="-25,12" tip="close" animate="1"/>
+    <text pos="30,30" width="60" height="30" font="adding:3">添加设备</text>
+    <text pos="30,80" width="70" height="30" align="right">设备号</text>
+    <edit name="edit_step2_device" class="cls_edit" number="1" pos="[20,{0" width="180" height="30" colorText="@color/black" cueText="请输入设备号"></edit>
+    <text pos="30,[20" width="70" height="30" align="right">云平台类型</text>
+    <combobox name="cbx_step2_cloud" pos="[20,{0" size="180,30" class="cls_box" btnSkin="_skin.sysbtn_drop_little" dropDown="1" dropHeight="100" animateTime="100" curSel="0" focusable="0">
+      <liststyle class="cls_box">
+      </liststyle>
+      <editstyle inset="5,0,5,0" colorText="#000000" colorBkgnd="#FFFFFF"/>
+      <items>
+        <item text="  羚羊云" />
+        <item text="  百度云" />
+      </items>
+    </combobox>
+    <imgbtn name="first_step" pos="120,[35" size="100, 34" skin="btn.blue" colorText="@color/white">下一步</imgbtn>
+    
+	</root>
+</SOUI>
+

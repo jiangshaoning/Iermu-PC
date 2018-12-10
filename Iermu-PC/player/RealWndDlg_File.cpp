@@ -1,8 +1,8 @@
 
 #include "stdafx.h"
-#include "RealWndDlg_Dev.h"
+#include "RealWndDlg_File.h"
 
-CRealWndDlg_Dev::CRealWndDlg_Dev():SHostDialog(_T("LAYOUT:XML_REALWND_DEV"))								
+CRealWndDlg_File::CRealWndDlg_File():SHostDialog(_T("LAYOUT:XML_REALWND_FILE"))								
 {
 	//m_menu_open.LoadMenu(_T("LAYOUT:menu_open"));
 	m_main_dlg = NULL;
@@ -12,31 +12,31 @@ CRealWndDlg_Dev::CRealWndDlg_Dev():SHostDialog(_T("LAYOUT:XML_REALWND_DEV"))
 	m_LButtonDown = 0;
 }
 
-CRealWndDlg_Dev::~CRealWndDlg_Dev(void)
+CRealWndDlg_File::~CRealWndDlg_File(void)
 {
-	RELEASEPLAYER(m_main_dlg->m_hplayer[1]);
+	RELEASEPLAYER(m_main_dlg->m_hplayer[2]);
 }
 
-LRESULT CRealWndDlg_Dev::OnInitRealWnd(UINT uMsg, WPARAM wParam, LPARAM lParam)
+LRESULT CRealWndDlg_File::OnInitRealWnd(UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	m_main_dlg = (CMainDlg*)lParam;
 	m_VolumeSlider = FindChildByName2<SSliderBar>(L"volumeSlider");
 	if (m_VolumeSlider)
 	{
 		int volume = m_VolumeSlider->GetValue();
-		player_setparam(m_main_dlg->m_hplayer[1], PARAM_AUDIO_VOLUME, (void*)&volume);
+		player_setparam(m_main_dlg->m_hplayer[2], PARAM_AUDIO_VOLUME, (void*)&volume);
 	}
 
 	return 0;
 }
 
-BOOL CRealWndDlg_Dev::IsFileExist(const SStringT& csFile)
+BOOL CRealWndDlg_File::IsFileExist(const SStringT& csFile)
 {
 	DWORD dwAttrib = GetFileAttributes(csFile);
 	return INVALID_FILE_ATTRIBUTES != dwAttrib && 0 == (dwAttrib & FILE_ATTRIBUTE_DIRECTORY);
 }
 
-void CRealWndDlg_Dev::OnTimer(UINT_PTR nIDEvent)
+void CRealWndDlg_File::OnTimer(UINT_PTR nIDEvent)
 {
 	int64_t pos = 0;
 	int64_t total = 1;
@@ -46,18 +46,18 @@ void CRealWndDlg_Dev::OnTimer(UINT_PTR nIDEvent)
 	{
 	case TIMER_ID_HIDE_TEXT:
 		KillTimer(TIMER_ID_HIDE_TEXT);
-		player_textout(m_main_dlg->m_hplayer[1], 0, 0, 0, NULL);
+		player_textout(m_main_dlg->m_hplayer[2], 0, 0, 0, NULL);
 		m_strTxt[0] = '\0';
 		break;
 	}
 }
 
-void CRealWndDlg_Dev::deviceOnSwitchToPlayer()
+void CRealWndDlg_File::fileOnSwitchToPlayer()
 {
-	m_main_dlg->GetDeviceList();
+	//m_main_dlg->GetDeviceList();
 }
 
-void CRealWndDlg_Dev::GetCurTimeName(char* Ctime, wchar_t* Wtime, char* name, char* postfix)
+void CRealWndDlg_File::GetCurTimeName(char* Ctime, wchar_t* Wtime, char* name, char* postfix)
 {
 	time_t curtime = time(NULL);
 	tm *ptm = localtime(&curtime);
@@ -69,32 +69,32 @@ void CRealWndDlg_Dev::GetCurTimeName(char* Ctime, wchar_t* Wtime, char* name, ch
 
 }
 
-void CRealWndDlg_Dev::PlayerShowText(int time)
+void CRealWndDlg_File::PlayerShowText(int time)
 {
-	player_textout(m_main_dlg->m_hplayer[1], 20, 20, RGB(0, 255, 0), m_strTxt);
+	player_textout(m_main_dlg->m_hplayer[2], 20, 20, RGB(0, 255, 0), m_strTxt);
 	SetTimer(TIMER_ID_HIDE_TEXT, time);
 }
 
-void CRealWndDlg_Dev::OnSnapshot()
+void CRealWndDlg_File::OnSnapshot()
 {
-	if (!m_main_dlg->m_hplayer[1]) return;
+	if (!m_main_dlg->m_hplayer[2]) return;
 
 	char ctime[40] = { 0 };
 	wchar_t wtime[48] = { 0 };
 	GetCurTimeName(ctime, wtime, "snapshot", "jpg");
-	player_snapshot(m_main_dlg->m_hplayer[1], ctime, 0, 0, 1000);
+	player_snapshot(m_main_dlg->m_hplayer[2], ctime, 0, 0, 1000);
 	_stprintf(m_strTxt, _T("抓拍到当前路径：%s"), wtime);
 	PlayerShowText(3000);
 }
 
-void CRealWndDlg_Dev::OnRecord()
+void CRealWndDlg_File::OnRecord()
 {
-	if (!m_main_dlg->m_hplayer[1]) return;
+	if (!m_main_dlg->m_hplayer[2]) return;
 
 	char ctime[40] = { 0 };
 	wchar_t wtime[48] = { 0 };
 	GetCurTimeName(ctime, wtime, "record", "mp4");
-	player_record(m_main_dlg->m_hplayer, m_bIsRecording ? NULL : ctime);
+	player_record(m_main_dlg->m_hplayer[2], m_bIsRecording ? NULL : ctime);
 	m_bIsRecording = !m_bIsRecording;
 	if (m_bIsRecording)
 	{
@@ -111,23 +111,23 @@ void CRealWndDlg_Dev::OnRecord()
 	PlayerShowText(3000);
 }
 
-void CRealWndDlg_Dev::OnVolume()
+void CRealWndDlg_File::OnVolume()
 {
 	int volume = -182;
 	FindChildByName2<SWindow>(L"btn_volume")->SetVisible(FALSE, TRUE);
 	FindChildByName2<SWindow>(L"btn_volume_zero")->SetVisible(TRUE, TRUE);
-	player_setparam(m_main_dlg->m_hplayer[1], PARAM_AUDIO_VOLUME, (void*)&volume);
+	player_setparam(m_main_dlg->m_hplayer[2], PARAM_AUDIO_VOLUME, (void*)&volume);
 }
 
-void CRealWndDlg_Dev::OnVolumeZero()
+void CRealWndDlg_File::OnVolumeZero()
 {
 	int volume = m_VolumeSlider->GetValue();
 	FindChildByName2<SWindow>(L"btn_volume")->SetVisible(TRUE, TRUE);
 	FindChildByName2<SWindow>(L"btn_volume_zero")->SetVisible(FALSE, TRUE);
-	player_setparam(m_main_dlg->m_hplayer[1], PARAM_AUDIO_VOLUME, (void*)&volume);
+	player_setparam(m_main_dlg->m_hplayer[2], PARAM_AUDIO_VOLUME, (void*)&volume);
 }
 
-void CRealWndDlg_Dev::OnScreenFull()
+void CRealWndDlg_File::OnScreenFull()
 {
 	if (!m_bFullScreenMode)
 		FullScreen(true);
@@ -136,9 +136,9 @@ void CRealWndDlg_Dev::OnScreenFull()
 }
 
 
-void CRealWndDlg_Dev::FullScreen(BOOL bFull)
+void CRealWndDlg_File::FullScreen(BOOL bFull)
 {
-	if (!m_main_dlg->m_hplayer[1]) return;
+	if (!m_main_dlg->m_hplayer[2]) return;
 
 	int iBorderX = GetSystemMetrics(SM_CXFIXEDFRAME) + GetSystemMetrics(SM_CXBORDER);
 	int iBorderY = GetSystemMetrics(SM_CYFIXEDFRAME) + GetSystemMetrics(SM_CYBORDER);
@@ -179,7 +179,7 @@ void CRealWndDlg_Dev::FullScreen(BOOL bFull)
 	}
 }
 // 键盘消息
-void CRealWndDlg_Dev::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
+void CRealWndDlg_File::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
 	switch (nChar)
 	{
@@ -205,7 +205,7 @@ void CRealWndDlg_Dev::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	SetMsgHandled(false);
 }
 
-void CRealWndDlg_Dev::OnLbuttonDBLCLK(UINT nFlags, CPoint point)
+void CRealWndDlg_File::OnLbuttonDBLCLK(UINT nFlags, CPoint point)
 {	
 	//双击全屏/退出
 	if (m_main_dlg)
@@ -214,11 +214,11 @@ void CRealWndDlg_Dev::OnLbuttonDBLCLK(UINT nFlags, CPoint point)
 	SetMsgHandled(false);
 }
 
-void CRealWndDlg_Dev::OnLButtonDown(UINT nFlags, CPoint point)
+void CRealWndDlg_File::OnLButtonDown(UINT nFlags, CPoint point)
 {
 	if (m_main_dlg)
 	{
-		player_leftbtndown(m_main_dlg->m_hplayer[1], point.x, point.y);
+		player_leftbtndown(m_main_dlg->m_hplayer[2], point.x, point.y);
 	}
 
 	if (m_VolumeSlider->GetWindowRect().PtInRect(point))//处理音量
@@ -233,7 +233,7 @@ void CRealWndDlg_Dev::OnLButtonDown(UINT nFlags, CPoint point)
 	//		SetTimer(TIMER_ID_PROGRESS, 100, NULL);
 	//	}
 	//	else {
-	//		if (!m_bPlayPause) player_pause(m_main_dlg->m_hplayer[1]);
+	//		if (!m_bPlayPause) player_pause(m_main_dlg->m_hplayer);
 	//		else player_play(m_ffPlayer);
 	//		m_bPlayPause = !m_bPlayPause;
 	//	}
@@ -241,79 +241,79 @@ void CRealWndDlg_Dev::OnLButtonDown(UINT nFlags, CPoint point)
 	SetMsgHandled(false);
 }
 
-void CRealWndDlg_Dev::OnLButtonUp(UINT nFlags, CPoint point)
+void CRealWndDlg_File::OnLButtonUp(UINT nFlags, CPoint point)
 {
 	if (m_main_dlg)
 	{
-		player_leftbtnup(m_main_dlg->m_hplayer[1]);
+		player_leftbtnup(m_main_dlg->m_hplayer[2]);
 	}
 	SetMsgHandled(false);
 }
 
-void CRealWndDlg_Dev::OnMouseMove(UINT nFlags, CPoint point)
+void CRealWndDlg_File::OnMouseMove(UINT nFlags, CPoint point)
 {
 	if (m_main_dlg)
 	{
-		player_mousemove(m_main_dlg->m_hplayer[1], point.x, point.y);
+		player_mousemove(m_main_dlg->m_hplayer[2], point.x, point.y);
 	}
 	SetMsgHandled(false);
 }
 
-BOOL CRealWndDlg_Dev::OnMouseWheel(UINT nFlags, short zDelta, CPoint point)
+BOOL CRealWndDlg_File::OnMouseWheel(UINT nFlags, short zDelta, CPoint point)
 {
 	if (m_main_dlg)
 	{
-		player_mousewheel(m_main_dlg->m_hplayer[1], zDelta);
+		player_mousewheel(m_main_dlg->m_hplayer[2], zDelta);
 	}
 	SetMsgHandled(false);
 	return TRUE;
 }
 
 
-LRESULT CRealWndDlg_Dev::OnMsg_TCP_TASK(UINT uMsg, WPARAM wp, LPARAM lp, BOOL & bHandled)
-{
-	SocketRetData *pEvt = (SocketRetData *)wp;
-	switch (pEvt->opt)
-	{
-	case OPT_GETCAMERA_LIST:
-		if (!pEvt->retOK)
-		{
-			//SetDisplayProgress(L"cameralist_win", L"refresh_progress");
-			//SetDisplayProgress(L"local_ip_win", L"local_ip_progress");
-			SMessageBox(NULL, _T("没有获取到局域网的设备，\n请确保局域网内有AI摄像机"), _T("提示"), MB_OK | MB_ICONERROR);
-			return false;
-		}
-		m_main_dlg->RefDeviceAdapterView();
-		STabCtrl *pTab = FindChildByName2<STabCtrl>(L"device_tab");
-		if (pTab)
-		{
-			pTab->SetCurSel(_T("player_page"));
-		}
-		break;
-	}
+//LRESULT CRealWndDlg_File::OnMsg_TCP_TASK(UINT uMsg, WPARAM wp, LPARAM lp, BOOL & bHandled)
+//{
+//	SocketRetData *pEvt = (SocketRetData *)wp;
+//	switch (pEvt->opt)
+//	{
+//	case OPT_GETCAMERA_LIST:
+//		if (!pEvt->retOK || !m_main_dlg->m_devicelist.GetCount())
+//		{
+//			//SetDisplayProgress(L"cameralist_win", L"refresh_progress");
+//			//SetDisplayProgress(L"local_ip_win", L"local_ip_progress");
+//			SMessageBox(NULL, _T("没有获取到局域网的设备，\n请确保局域网内有AI摄像机"), _T("提示"), MB_OK | MB_ICONERROR);
+//			return false;
+//		}
+//		m_main_dlg->RefDeviceAdapterView();
+//		STabCtrl *pTab = FindChildByName2<STabCtrl>(L"device_tab");
+//		if (pTab)
+//		{
+//			pTab->SetCurSel(_T("player_page"));
+//		}
+//		break;
+//	}
+//
+//	delete pEvt;
+//	return true;
+//}
 
-	delete pEvt;
-	return true;
-}
-
-LRESULT CRealWndDlg_Dev::playVideo(UINT uMsg, WPARAM wParam, LPARAM lParam)
+LRESULT CRealWndDlg_File::playVideo(UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	switch (wParam)
 	{
 	case MSG_OPEN_FAILED:
-		RELEASEPLAYER(m_main_dlg->m_hplayer[1]);
+		RELEASEPLAYER(m_main_dlg->m_hplayer[2]);
 		SMessageBox(NULL, _T("播放失败，请重新再试！"), _T("提示"), MB_OK | MB_ICONERROR);
 		break;
 	case MSG_OPEN_DONE:
-		player_play(m_main_dlg->m_hplayer[1]);
-		player_setrect(m_main_dlg->m_hplayer[1], 0, 0, 0, m_main_dlg->m_rtClient.cx - m_main_dlg->m_otherWidth, m_main_dlg->m_rtClient.cy - m_main_dlg->m_otherHeight);
-		player_setrect(m_main_dlg->m_hplayer[1], 1, 0, 0, m_main_dlg->m_rtClient.cx - m_main_dlg->m_otherWidth, m_main_dlg->m_rtClient.cy - m_main_dlg->m_otherHeight);
+		player_play(m_main_dlg->m_hplayer[2]);
+		player_setrect(m_main_dlg->m_hplayer[2], 0, 0, 0, m_main_dlg->m_rtClient.cx - m_main_dlg->m_otherWidth, m_main_dlg->m_rtClient.cy - m_main_dlg->m_otherHeight);
+		player_setrect(m_main_dlg->m_hplayer[2], 1, 0, 0, m_main_dlg->m_rtClient.cx - m_main_dlg->m_otherWidth, m_main_dlg->m_rtClient.cy - m_main_dlg->m_otherHeight);
 		m_main_dlg->m_isplaying = TRUE;
 		//m_main_dlg->OnPlaySwitchPause();
 		//m_main_dlg->OnPlayProgress();
 		break;
 	case MSG_PLAY_COMPLETED:
-		RELEASEPLAYER(m_main_dlg->m_hplayer[1]);
+		RELEASEPLAYER(m_main_dlg->m_hplayer[2]);
 		m_main_dlg->m_isplaying = FALSE;
 		//m_main_dlg->OnPlaySwitchPause();
 		break;

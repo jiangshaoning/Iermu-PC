@@ -5,10 +5,10 @@
 #include <algorithm>
 
 //本地播放list窗口
-class CPlayListWnd : public SMcAdapterBase
+class CFileListWnd : public SMcAdapterBase
 {
 public:
-	CPlayListWnd(HWND _hwnd):_m_hwnd(_hwnd),m_sel_index(-1)
+	CFileListWnd(HWND _hwnd):_m_hwnd(_hwnd),m_sel_index(-1)
 	{
 	}
 	virtual int getCount()
@@ -26,7 +26,7 @@ public:
 		pBtnsave->SetWindowTextW(SStringT().Format(L"%s", info.m_name));
 		//pBtnsave->SetAttribute(L"tip", S_CT2W(info.m_name));
 		pItem->SetUserData(position);
-		pItem->GetEventSet()->subscribeEvent(EventItemPanelDbclick::EventID, Subscriber(&CPlayListWnd::OnButtonDbclick, this));
+		pItem->GetEventSet()->subscribeEvent(EventItemPanelDbclick::EventID, Subscriber(&CFileListWnd::OnButtonDbclick, this));
 
 	}
 

@@ -45,6 +45,7 @@ typedef enum
 	OPT_GET_QRCODE,					//获取二维码(http协议)
 	OPT_QRCODE_STATUS,				//二维码状态
 	OPT_PASSWD_LOGIN,				//密码登录
+	OPT_QUIT_LOGIN,					//注销登录
 	OPT_REGISTRE,					//注册
 	OPT_CANCELLATION,				//注消(http协议)
 	OPT_GETONLINE,					//获取上线状态

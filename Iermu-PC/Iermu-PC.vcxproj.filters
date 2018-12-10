@@ -80,6 +80,9 @@
     <ClCompile Include="player\RealWndDlg_Dev.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="player\RealWndDlg_File.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Iermu-PC.rc">
@@ -141,12 +144,6 @@
     <ClInclude Include="custom\MagnetFrame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="custom\SSetPopupWnd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="adapter\PlayListAdapter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="adapter\CameraListAdapter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -160,6 +157,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="player\RealWndDlg_Dev.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="custom\UserPopupWnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="adapter\FileListAdapter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="player\RealWndDlg_File.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="custom\AddPopupWnd.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -196,13 +205,19 @@
     <Xml Include="uires\xml\dlg_realwnd.xml">
       <Filter>SoUI Resouece</Filter>
     </Xml>
-    <Xml Include="uires\xml\dlg_loading.xml">
-      <Filter>SoUI Resouece</Filter>
-    </Xml>
     <Xml Include="uires\xml\dlg_realwnd_Dev.xml">
       <Filter>SoUI Resouece</Filter>
     </Xml>
-    <Xml Include="uires\xml\dlg_userwnd.xml">
+    <Xml Include="uires\xml\dlg_realwnd_File.xml">
+      <Filter>SoUI Resouece</Filter>
+    </Xml>
+    <Xml Include="uires\xml\pop_userwnd.xml">
+      <Filter>SoUI Resouece</Filter>
+    </Xml>
+    <Xml Include="uires\xml\pop_loading.xml">
+      <Filter>SoUI Resouece</Filter>
+    </Xml>
+    <Xml Include="uires\xml\pop_addwnd.xml">
       <Filter>SoUI Resouece</Filter>
     </Xml>
   </ItemGroup>

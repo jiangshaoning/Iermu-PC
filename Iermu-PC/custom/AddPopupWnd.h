@@ -1,24 +1,19 @@
 #pragma once
 #include "MainDlg.h"
 
-class SSetPopupWnd :public SHostWnd
+class AddPopupWnd :public SHostWnd
 {
 public:
-	SSetPopupWnd(LPCTSTR pszResName = NULL, HWND hwnd = NULL) :SHostWnd(pszResName), m_dlgWnd(hwnd){}
+	AddPopupWnd(LPCTSTR pszResName = NULL, HWND hwnd = NULL) :SHostWnd(pszResName), m_dlgWnd(hwnd){}
 
 	void OnClose()
 	{
 		SetVisible(FALSE, TRUE);
 	}
 
-	void OnQuitLogin()
-	{
-		::PostMessage(m_dlgWnd, WM_QUIT_LOGIN, 0, 0);
-	}
 
 	EVENT_MAP_BEGIN()
-		EVENT_NAME_COMMAND(L"user_close", OnClose)
-		EVENT_NAME_COMMAND(L"quit_login", OnQuitLogin)
+		EVENT_NAME_COMMAND(L"add_close", OnClose)
 		EVENT_MAP_END()
 	BEGIN_MSG_MAP_EX(SSkiaTestWnd)
 		CHAIN_MSG_MAP(__super)

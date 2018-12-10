@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<SOUI width="-1" height="-1" resizable="1" wndType="normal" toolwindow="1" translucent="0">
+	<!--演示root大小自动计算,注意soui结点width,height的设置，哪一个值需要自动计算就设置为-1-->
+	<root size="-1,-1">
+    <tabctrl name="file_tab" pos="0,0,-0,-0" tabAlign="top" tabSkin="" tabInterSize="2" tabWidth="0" tabHeight="0" focusable="0" show="1" curSel="0">
+      <page title="file_tip_page" colorBkgnd="@color/mainbg">
+        <img pos="|-70, |-100" skin="_skin.no_camera"></img>
+        <text pos="|0, |50" offset="-0.5,-0.5">亲,列表暂时还没有本地视频呢</text>
+        <text name="add_link" pos="|0, |80" offset="-0.5,-0.5" colorText="@color/blue" msgtransparent="0" cursor="hand">点击导入</text>
+      </page>
+
+      <page title="player_page" colorBkgnd="#000000ff">
+
+        <window name="player_tools" pos="0, -40, -0, -0" colorBkgnd="@color/toolsbg">
+          <imgbtn name="btn_volume" data="1" pos="20,12" cursor="hand" size="16,16" tip="静音" animate="1" skin="btn.volume"/>
+          <imgbtn name="btn_volume_zero" data="1" pos="20,12" cursor="hand" size="16,16" tip="音量" animate="1" skin="btn.volume_zero" show="0"/>
+          <sliderbar name="volumeSlider" pos="[0,14" thumbInRail="0" cursor="hand" width="100" value="30" min="-182" max="73" thumbSkin="skin.SliderPlayvol_png" posSkin="skin.SliderForeVolume_png" bkgndSkin="skin.SliderBackVolume_png"/>
+          <imgbtn name="btn_cloud_video" pos="-260,10" cursor="hand" tip="回看录像" animate="1" skin="btn.cloud_video"/>
+          <imgbtn name="btn_snapshot" pos="[20,10" cursor="hand" tip="截屏" animate="1" skin="btn.snapshot"/>
+          <imgbtn name="btn_player_set" pos="[20,10" cursor="hand" tip="设置" animate="1" skin="btn.player_set"/>
+          <imgbtn name="btn_four_player" pos="[20,10" cursor="hand" tip="四分屏" animate="1" skin="btn.four_player"/>
+          <imgbtn name="btn_face_recognition" pos="[20,10" cursor="hand" tip="人脸识别" animate="1" skin="btn.face_recognition"/>
+          <imgbtn name="btn_screen_full" pos="[20,10" cursor="hand" tip="全屏" animate="1" skin="btn.screen_full"/>
+        </window>
+      </page>
+
+    </tabctrl>
+	</root>
+</SOUI>
