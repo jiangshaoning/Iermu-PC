@@ -9,7 +9,7 @@
         <text name="add_link" pos="|0, |80" offset="-0.5,-0.5" colorText="@color/blue" msgtransparent="0" cursor="hand">点击导入</text>
       </page>
 
-      <page title="player_page" colorBkgnd="#000000ff">
+      <page title="file_player_page" colorBkgnd="#000000ff">
 
         <window name="player_tools" pos="0, -40, -0, -0" colorBkgnd="@color/toolsbg">
           <imgbtn name="btn_volume" data="1" pos="20,12" cursor="hand" size="16,16" tip="静音" animate="1" skin="btn.volume"/>

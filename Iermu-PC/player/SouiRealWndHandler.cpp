@@ -37,7 +37,7 @@ namespace SOUI
 		}
 		else  if (param.m_strClassName == _T("CRealWndDlg_File"))
 		{
-			SHostWnd *wndDlg_File = new CRealWndDlg_File;
+			CRealWndDlg_File *wndDlg_File = new CRealWndDlg_File;
 			wndDlg_File->Create(pRealWnd->GetContainer()->GetHostHwnd(), WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON | WS_CLIPSIBLINGS, 0, 0, 0, 0, 0);
 			pRealWnd->SetData(wndDlg_File);
 			return wndDlg_File->m_hWnd;
@@ -62,40 +62,22 @@ namespace SOUI
 		}
 		else if (param.m_strClassName == _T("CRealWndDlg_Dev"))
 		{
-			CRealWndDlg_Dev *pbtn_url = (CRealWndDlg_Dev*)pRealWnd->GetData();
-			if (pbtn_url)
+			CRealWndDlg_Dev *pbtn_dev = (CRealWndDlg_Dev*)pRealWnd->GetData();
+			if (pbtn_dev)
 			{
-				pbtn_url->DestroyWindow();
-				delete pbtn_url;
+				pbtn_dev->DestroyWindow();
+				delete pbtn_dev;
 			}
 		}
-		//else if (param.m_strClassName == _T("CRealWndDlg_ABOUT"))
-		//{
-		//	CRealWndDlg_URL *pbtn_about = (CRealWndDlg_URL*)pRealWnd->GetData();
-		//	if (pbtn_about)
-		//	{
-		//		pbtn_about->DestroyWindow();
-		//		delete pbtn_about;
-		//	}
-		//}
-		//else if (param.m_strClassName == _T("CRealWndDlg_DEPOT"))
-		//{
-		//	SHostWnd *pbtn_depot = (SHostWnd*)pRealWnd->GetData();
-		//	if (pbtn_depot)
-		//	{
-		//		pbtn_depot->DestroyWindow();
-		//		delete pbtn_depot;
-		//	}
-		//}
-		//else if (param.m_strClassName == _T("CRealWndDlg_SKIN"))
-		//{
-		//	SHostWnd *pbtn_skin = (SHostWnd*)pRealWnd->GetData();
-		//	if (pbtn_skin)
-		//	{
-		//		pbtn_skin->DestroyWindow();
-		//		delete pbtn_skin;
-		//	}
-		//}
+		else if (param.m_strClassName == _T("CRealWndDlg_File"))
+		{
+			CRealWndDlg_File *pbtn_file = (CRealWndDlg_File*)pRealWnd->GetData();
+			if (pbtn_file)
+			{
+				pbtn_file->DestroyWindow();
+				delete pbtn_file;
+			}
+		}
 		 
     }
     

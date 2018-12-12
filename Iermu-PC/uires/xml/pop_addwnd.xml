@@ -1,22 +1,56 @@
 <?xml version="1.0"?>
-<SOUI width="340" height="265" appWnd="0" resizable="0" translucent="1" alpha="255">
+<SOUI width="340" height="315" appWnd="0" resizable="0" translucent="1" alpha="255">
 	<root skin="_skin.qrcode_bg">
-    <imgbtn name="add_close" skin="_skin.tip_close" pos="-25,12" tip="close" animate="1"/>
-    <text pos="30,30" width="60" height="30" font="adding:3">添加设备</text>
-    <text pos="30,80" width="70" height="30" align="right">设备号</text>
-    <edit name="edit_step2_device" class="cls_edit" number="1" pos="[20,{0" width="180" height="30" colorText="@color/black" cueText="请输入设备号"></edit>
-    <text pos="30,[20" width="70" height="30" align="right">云平台类型</text>
-    <combobox name="cbx_step2_cloud" pos="[20,{0" size="180,30" class="cls_box" btnSkin="_skin.sysbtn_drop_little" dropDown="1" dropHeight="100" animateTime="100" curSel="0" focusable="0">
-      <liststyle class="cls_box">
-      </liststyle>
-      <editstyle inset="5,0,5,0" colorText="#000000" colorBkgnd="#FFFFFF"/>
-      <items>
-        <item text="  羚羊云" />
-        <item text="  百度云" />
-      </items>
-    </combobox>
-    <imgbtn name="first_step" pos="120,[35" size="100, 34" skin="btn.blue" colorText="@color/white">下一步</imgbtn>
-    
+    <tabctrl name="add_tab" pos="0,0,-0,-0" tabAlign="top" tabSkin="" tabInterSize="2" tabWidth="0" tabHeight="0" focusable="0" show="1" curSel="0">
+      <page title="add_first_page">
+        <imgbtn name="add_close" skin="_skin.tip_close" pos="-25,12" tip="close" animate="1"/>
+        <text pos="30,30" width="60" height="30" font="adding:3">添加设备</text>
+        <text pos="30,100" width="70" height="30" align="right">设备号</text>
+        <edit name="edit_step1_device" class="cls_edit" number="1" pos="[20,{0" width="180" height="30" colorText="@color/black" cueText="请输入设备号"></edit>
+        <text pos="30,[20" width="70" height="30" align="right">云平台类型</text>
+        <combobox name="cbx_step2_cloud" pos="[20,{0" size="180,30" class="cls_box" btnSkin="_skin.sysbtn_drop_little" dropDown="1" dropHeight="100" animateTime="100" curSel="0" focusable="0">
+          <liststyle class="cls_box">
+          </liststyle>
+          <editstyle inset="5,0,5,0" colorText="#000000" colorBkgnd="#FFFFFF"/>
+          <items>
+            <item text="  羚羊云" />
+            <item text="  百度云" />
+          </items>
+        </combobox>
+        <imgbtn name="first_step" pos="120,[60" size="100, 30" skin="btn.blue" colorText="@color/white">下一步</imgbtn>
+      </page>       
+      <page title="add_second_tab">
+        <imgbtn name="add_close" skin="_skin.tip_close" pos="-25,12" tip="close" animate="1"/>
+        <text pos="30,30" width="60" height="30" font="adding:3">添加设备</text>  
+        <text pos="30,80" width="80" height="30" align="right">网络配置</text>
+            <combobox name="cbx_step3_net" pos="[20,{2" size="180,26" class="cls_box" btnSkin="_skin.sysbtn_drop_little" dropDown="1" dropHeight="100" animateTime="100" curSel="0" focusable="0">
+              <liststyle class="cls_box">
+              </liststyle>
+              <editstyle inset="5,0,5,0" colorText="#000000" colorBkgnd="#FFFFFF"/>
+              <items>
+                <item text="  使用DHCP" />
+                <item text="  手动固定IP" />
+              </items>
+            </combobox>
+            <window name="wnd_step3_ip" pos="30,[5" show="1">
+              <text pos="0, 0" width="80" height="30" align="right">IP地址</text>
+              <edit name="edit_step3_ip" class="cls_edit" pos="[20,{0" width="180" height="30" colorText="@color/black" cueText="请输入IP地址"></edit>
+              <text pos="0, [5" width="80" height="30" align="right">子网掩码</text>
+              <edit name="edit_step3_mask" class="cls_edit" pos="[20,{0" width="180" height="30" colorText="@color/black" cueText="请输入子网掩码"></edit>
+              <text pos="0, [5" width="80" height="30" align="right">网关地址</text>
+              <edit name="edit_step3_gateway" class="cls_edit" pos="[20,{0" width="180" height="30" colorText="@color/black" cueText="请输入网关"></edit>
+              <text pos="0, [5" width="80" height="30" align="right">DNS地址</text>
+              <edit name="edit_step3_dns" class="cls_edit" pos="[20,{0" width="180" height="30" colorText="@color/black" cueText="请输入DNS"></edit>
+            </window>
+            <imgbtn name="second_step" pos="120,[25" size="100, 30" skin="btn.blue" colorText="@color/white">下一步</imgbtn>
+      </page>
+      <page title="add_third_tab">
+        <imgbtn name="add_close" skin="_skin.tip_close" pos="-25,12" tip="close" animate="1"/>
+        <text name="add_deviceid" pos="|-40,100" colorText="@color/blue" font="adding:3">设备</text>
+        <text pos="|-30,[30" colorText="@color/blue" font="adding:3">成功上线</text>
+        <imgbtn name="third_step" pos="120,[60" size="100, 30" skin="btn.blue" colorText="@color/white">继续添加</imgbtn>
+      </page>
+    </tabctrl>
 	</root>
 </SOUI>
 

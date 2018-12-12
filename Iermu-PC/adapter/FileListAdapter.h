@@ -8,7 +8,7 @@
 class CFileListWnd : public SMcAdapterBase
 {
 public:
-	CFileListWnd(HWND _hwnd):_m_hwnd(_hwnd),m_sel_index(-1)
+	CFileListWnd(HWND _hwnd) :_m_hwnd(_hwnd), m_SipItem(NULL), m_DbpItem(NULL), m_sel_index(-1)
 	{
 	}
 	virtual int getCount()
@@ -22,20 +22,49 @@ public:
 			pItem->InitFromXml(xmlTemplate);
 		}
 		PlaylistInfo info = m_db[position];
-		SStatic *pBtnsave = pItem->FindChildByName2<SStatic>(L"filename");
+		SStatic *pBtnsave = pItem->FindChildByName2<SStatic>(L"file_name");
 		pBtnsave->SetWindowTextW(SStringT().Format(L"%s", info.m_name));
-		//pBtnsave->SetAttribute(L"tip", S_CT2W(info.m_name));
 		pItem->SetUserData(position);
+		pItem->GetEventSet()->subscribeEvent(EventItemPanelClick::EventID, Subscriber(&CFileListWnd::OnButtonclick, this));
 		pItem->GetEventSet()->subscribeEvent(EventItemPanelDbclick::EventID, Subscriber(&CFileListWnd::OnButtonDbclick, this));
 
 	}
 
+	bool OnButtonclick(EventArgs *pEvt)
+	{
+		if (m_SipItem)
+		{
+			m_SipItem->FindChildByName2<SStatic>(L"file_name")->SetAttribute(L"colorText", L"@color/white", FALSE);
+		}
+
+		m_SipItem = sobj_cast<SWindow>(pEvt->sender);
+		m_sel_index = m_SipItem->GetUserData();
+
+		m_SipItem->FindChildByName2<SStatic>(L"file_name")->SetAttribute(L"colorText", L"@color/blue", FALSE);
+
+		return true;
+	}
+
 	bool OnButtonDbclick(EventArgs *pEvt)//播放文件
 	{
-		SWindow *btn = sobj_cast<SWindow>(pEvt->sender);
-		string  _pathname = S_CT2A(m_db[btn->GetUserData()].m_FULL_Path);
-		m_sel_index=btn->GetUserData();
-		::PostMessage(_m_hwnd, MS_PLAYING_PATHNAME, 0, (LPARAM)_pathname.c_str());
+		if (m_DbpItem)
+		{
+			m_SipItem->FindChildByName2<SStatic>(L"file_name")->SetAttribute(L"colorText", L"@color/white", FALSE);
+			m_DbpItem->FindChildByName2<SGifPlayer>(L"playing_file")->SetVisible(FALSE, TRUE);
+			m_DbpItem->FindChildByName2<SImageWnd>(L"file_icon")->SetVisible(TRUE, TRUE);
+		}
+
+		m_DbpItem = sobj_cast<SWindow>(pEvt->sender);
+		m_sel_index = m_DbpItem->GetUserData();
+		string  _pathname = S_CT2A(m_db[m_sel_index].m_FULL_Path);
+
+		m_DbpItem->FindChildByName2<SStatic>(L"file_name")->SetAttribute(L"colorText", L"@color/blue", FALSE);
+		m_DbpItem->FindChildByName2<SImageWnd>(L"file_icon")->SetVisible(FALSE, TRUE);
+		m_DbpItem->FindChildByName2<SGifPlayer>(L"playing_file")->SetVisible(TRUE, TRUE);
+		//STabCtrl *pTab = m_DbpItem->FindChildByName2<STabCtrl>(L"file_tab");
+		//pTab->SetCurSel(_T("file_player_page"));
+
+		::SendMessageW(_m_hwnd, MS_PLAYING_PATHNAME, 0, (LPARAM)_pathname.c_str());
 		return true;
 	}
 	void ADD_files(SStringT  m_path)
@@ -120,6 +149,8 @@ private:
 		return nRet;
 	}
 	
-	SArray<PlaylistInfo> m_db;
-	int					 m_sel_index;
+	SArray<PlaylistInfo>	m_db;
+	SWindow*				m_SipItem;			//记住上一次单击选择的item
+	SWindow*				m_DbpItem;			//记住上一次双击选择的item
+	int						m_sel_index;
 };

@@ -182,6 +182,7 @@
     <Text Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="custom\AddPopupWnd.cpp" />
     <ClCompile Include="custom\FilesHelp.cpp" />
     <ClCompile Include="custom\MagnetFrame.cpp" />
     <ClCompile Include="custom\SerializeObj.cpp" />
@@ -293,7 +294,9 @@
     <Xml Include="uires\xml\dlg_realwnd.xml">
       <SubType>Designer</SubType>
     </Xml>
-    <Xml Include="uires\xml\pop_addwnd.xml" />
+    <Xml Include="uires\xml\pop_addwnd.xml">
+      <SubType>Designer</SubType>
+    </Xml>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

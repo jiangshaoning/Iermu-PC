@@ -83,6 +83,9 @@
     <ClCompile Include="player\RealWndDlg_File.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="custom\AddPopupWnd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Iermu-PC.rc">

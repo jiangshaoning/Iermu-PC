@@ -3,7 +3,13 @@
   <window pos="0,0,176,-0" colorBkgnd="@color/listbg" colorText="@color/pagetext" font="adding:2">
     <text pos="12, 0" height="50">本地文件</text>
     <hr pos="12,50,176,@2" lineStyle="solid" mode="horizontal" colorLine="@color/pagetext" size="1"/>
-
+    <listview pos="0,55,-0,-0" sbSkin="_skin.scorllbar" name="file_list" dividerSize="1">
+      <template itemHeight="30" colorHover="@color/listbg" colorSelected="@color/listsel">
+        <img name="file_icon" pos="12, 6" skin="_icon.camera" show="1"></img>
+        <gifplayer name="playing_file" pos="12, 6" skin="_icon.playing" show="0"></gifplayer>
+        <text name="file_name" pos="40, 8," colorText="@color/white">btn</text>
+      </template>
+    </listview>
   </window>
   <window pos="176,0,-0,-0">
     <realwnd pos="0,0,-0,-0" name="ffplaywnd_file"  focusable="0" wndclass="CRealWndDlg_File" wndname="mainWindow" />

@@ -20,6 +20,7 @@ CRealWndDlg_File::~CRealWndDlg_File(void)
 LRESULT CRealWndDlg_File::OnInitRealWnd(UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	m_main_dlg = (CMainDlg*)lParam;
+
 	m_VolumeSlider = FindChildByName2<SSliderBar>(L"volumeSlider");
 	if (m_VolumeSlider)
 	{
@@ -54,7 +55,11 @@ void CRealWndDlg_File::OnTimer(UINT_PTR nIDEvent)
 
 void CRealWndDlg_File::fileOnSwitchToPlayer()
 {
-	//m_main_dlg->GetDeviceList();
+	STabCtrl *pTab = FindChildByName2<STabCtrl>(L"file_tab");
+	if (pTab)
+	{
+		pTab->SetCurSel(_T("file_player_page"));
+	}
 }
 
 void CRealWndDlg_File::GetCurTimeName(char* Ctime, wchar_t* Wtime, char* name, char* postfix)
@@ -269,6 +274,11 @@ BOOL CRealWndDlg_File::OnMouseWheel(UINT nFlags, short zDelta, CPoint point)
 	return TRUE;
 }
 
+LRESULT CRealWndDlg_File::OnMsg_ADD_FILE(UINT uMsg, WPARAM wp, LPARAM lp, BOOL & bHandled)
+{
+	fileOnSwitchToPlayer();
+	return 0;
+}
 
 //LRESULT CRealWndDlg_File::OnMsg_TCP_TASK(UINT uMsg, WPARAM wp, LPARAM lp, BOOL & bHandled)
 //{

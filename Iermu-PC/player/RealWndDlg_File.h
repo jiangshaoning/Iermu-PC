@@ -28,7 +28,7 @@ private:
 	BOOL OnMouseWheel(UINT nFlags, short zDelta, CPoint point);
 	LRESULT OnInitRealWnd(UINT uMsg, WPARAM wParam, LPARAM lParam);				//初始化界面和播放器
 	LRESULT playVideo(UINT uMsg, WPARAM wParam, LPARAM lParam);
-	//LRESULT OnMsg_TCP_TASK(UINT uMsg, WPARAM wp, LPARAM lp, BOOL & bHandled);
+	LRESULT OnMsg_ADD_FILE(UINT uMsg, WPARAM wp, LPARAM lp, BOOL & bHandled);
 protected:
 	//soui消息
 	EVENT_MAP_BEGIN()
@@ -38,7 +38,7 @@ protected:
 		EVENT_NAME_COMMAND(L"btn_volume", OnVolume)
 		EVENT_NAME_COMMAND(L"btn_volume_zero", OnVolumeZero)
 		EVENT_NAME_COMMAND(L"btn_screen_full", OnScreenFull)
-		EVENT_NAME_COMMAND(L"add_link", fileOnSwitchToPlayer)
+		EVENT_NAME_COMMAND(L"add_link", __noop)
 	EVENT_MAP_END()
     //消息映射表
     BEGIN_MSG_MAP_EX(CRealWndDlg_File)
@@ -50,7 +50,7 @@ protected:
 		MSG_WM_LBUTTONDOWN(OnLButtonDown)
 		MSG_WM_MOUSEMOVE(OnMouseMove)
 		MSG_WM_MOUSEWHEEL(OnMouseWheel)
-		//MESSAGE_HANDLER(WM_TCPREQUEST_TASK, OnMsg_TCP_TASK)
+		MESSAGE_HANDLER(WM_ADD_FILESED, OnMsg_ADD_FILE)
 		MESSAGE_HANDLER_EX(MS_INIT_REALWND, OnInitRealWnd)
 		MESSAGE_HANDLER_EX(MSG_FANPLAYER, playVideo)		//播放器过来的渲染消息
         CHAIN_MSG_MAP(SHostDialog)

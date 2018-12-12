@@ -1,21 +1,26 @@
 #pragma once
-#include "MainDlg.h"
+
+class CMainDlg;
 
 class AddPopupWnd :public SHostWnd
 {
 public:
-	AddPopupWnd(LPCTSTR pszResName = NULL, HWND hwnd = NULL) :SHostWnd(pszResName), m_dlgWnd(hwnd){}
+	AddPopupWnd(LPCTSTR pszResName = NULL, CMainDlg* dlg = NULL) :SHostWnd(pszResName), m_dlg(dlg){}
 
-	void OnClose()
-	{
-		SetVisible(FALSE, TRUE);
-	}
-
+	void OnClose();
+	void FirstStep();
+	void SecondStep();
+	void ThirdStep();
+	LRESULT OnMsg_HTTP_TASK(UINT uMsg, WPARAM wp, LPARAM lp, BOOL & bHandled);
 
 	EVENT_MAP_BEGIN()
 		EVENT_NAME_COMMAND(L"add_close", OnClose)
+		EVENT_NAME_COMMAND(L"first_step", FirstStep)
+		EVENT_NAME_COMMAND(L"second_step", SecondStep)
+		EVENT_NAME_COMMAND(L"third_step", ThirdStep)
 		EVENT_MAP_END()
 	BEGIN_MSG_MAP_EX(SSkiaTestWnd)
+	MESSAGE_HANDLER(WM_ADD_FILESED, OnMsg_HTTP_TASK)
 		CHAIN_MSG_MAP(__super)
 		END_MSG_MAP()
 
@@ -26,6 +31,7 @@ protected:
 		delete this;
 	}
 private:
-	HWND m_dlgWnd;
+	CMainDlg*	m_dlg;
+	string		m_deviceId;
 };
 
