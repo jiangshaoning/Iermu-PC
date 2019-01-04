@@ -77,6 +77,12 @@ LRESULT CRealWndDlg::OnCameraTipPage(UINT uMsg, WPARAM wParam, LPARAM lParam)
 	return 0;
 }
 
+LRESULT CRealWndDlg::OnSaveToken(UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+	saveUserInfo();
+	return 0;
+}
+
 //ÆÕÍ¨ÕËºÅÃÜÂëµÇÂ¼
 void CRealWndDlg::CameraOnBtnLogin()
 {
@@ -176,6 +182,7 @@ void CRealWndDlg::CameraOnSwitchAIPlayer()
 	if (pTab)
 	{
 		pTab->SetCurSel(_T("ai_player_page"));
+		m_main_dlg->m_isLogin = TRUE;
 	}
 }
 
@@ -289,7 +296,8 @@ void CRealWndDlg::loadUserInfo()
 				m_main_dlg->GetUserInfoRequest();
 				m_main_dlg->loadDeviceInfo();
 				m_main_dlg->GetCameraList();
-				CameraOnSwitchNorPlayer();
+				//CameraOnSwitchNorPlayer();
+				CameraOnSwitchAIPlayer();
 			}
 			break;
 		default:

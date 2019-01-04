@@ -10,7 +10,8 @@
 #define QRCODESTATUS_URL	"https://api.iermu.com/oauth2/qrcode/status?"
 #define AUTHORIZATION_URL	"https://api.iermu.com/oauth2/token"
 #define GETUSERINFO_URL		"https://api.iermu.com/v2/passport/user?"
-#define GETDEVICEINFO_URL	"https://api.iermu.com/v2/pcs/device"
+#define GETDEVICEINFO_URL	"https://api.iermu.com/v2/device"
+#define GETSERVICEPUSH_URL	"https://api.iermu.com/v2/service/push"
 
 #define CAMERA_DEFAULTIP				"192.168.1.10"
 #define CAMERA_USERNAME					"88888888"

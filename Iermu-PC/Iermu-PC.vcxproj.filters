@@ -86,6 +86,9 @@
     <ClCompile Include="custom\AddPopupWnd.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="adapter\FaceAdapter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Iermu-PC.rc">
@@ -172,6 +175,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="custom\AddPopupWnd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="adapter\FaceAdapter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

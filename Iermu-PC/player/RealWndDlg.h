@@ -39,6 +39,7 @@ private:
 	BOOL OnMouseWheel(UINT nFlags, short zDelta, CPoint point);
 	LRESULT OnInitRealWnd(UINT uMsg, WPARAM wParam, LPARAM lParam);				//初始化界面和播放器
 	LRESULT OnCameraTipPage(UINT uMsg, WPARAM wParam, LPARAM lParam);			//进入第一个界面
+	LRESULT OnSaveToken(UINT uMsg, WPARAM wParam, LPARAM lParam);				//保存token
 	LRESULT OnOpenLogin(UINT uMsg, WPARAM wParam, LPARAM lParam);				//打开登录界面
 	LRESULT openVideo(UINT uMsg, WPARAM wParam, LPARAM lParam);		
 	LRESULT closeVideo(UINT uMsg, WPARAM wParam, LPARAM lParam);
@@ -74,6 +75,7 @@ protected:
 		MSG_WM_MOUSEWHEEL(OnMouseWheel)
 		MESSAGE_HANDLER_EX(MS_INIT_REALWND, OnInitRealWnd)
 		MESSAGE_HANDLER_EX(MS_OPEN_TIPPAGE, OnCameraTipPage)
+		MESSAGE_HANDLER_EX(MS_SAVE_TOKEN, OnSaveToken)
 		MESSAGE_HANDLER_EX(MS_OPEN_LOGIN, OnOpenLogin)
 		MESSAGE_HANDLER_EX(MS_OPENVIDEO_REALWND, openVideo)
 		MESSAGE_HANDLER_EX(MS_CLOSEVIDEO_REALWND, closeVideo)
@@ -90,7 +92,7 @@ private:
 	int				m_LButtonDown;
 	BOOL			m_ctrl_down;
 	BOOL			m_bIsRecording;
-	BOOL            m_bFullScreenMode;  // 是否在全屏模式
+	BOOL            m_bFullScreenMode;	  // 是否在全屏模式
 	SSliderBar*		m_VolumeSlider;
 	WINDOWPLACEMENT		OldWndPlacement;  // 保存窗口原来的位置
 	TCHAR			m_strTxt[MAX_PATH];

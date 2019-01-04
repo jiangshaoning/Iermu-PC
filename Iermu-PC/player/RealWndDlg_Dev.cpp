@@ -287,7 +287,7 @@ LRESULT CRealWndDlg_Dev::OnMsg_TCP_TASK(UINT uMsg, WPARAM wp, LPARAM lp, BOOL & 
 		STabCtrl *pTab = FindChildByName2<STabCtrl>(L"device_tab");
 		if (pTab)
 		{
-			pTab->SetCurSel(_T("player_page"));
+			pTab->SetCurSel(_T("dev_player_page"));
 		}
 		break;
 	}

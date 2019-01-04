@@ -102,22 +102,35 @@
         </window>
       </page>
 
-      <page title="ai_player_page">
-
-        <window pos="0,0,-244,-184"  colorBkgnd="#000000ff">
-
-          <window name="player_tools" pos="50, -80, -50, -30" skin="_skin.player_tools_bg">
-            <imgbtn name="btn_volume" data="1" pos="20,16" cursor="hand" size="16,16" tip="静音" animate="1" skin="btn.volume" />
-            <imgbtn name="btn_volume_zero" data="1" pos="20,16" cursor="hand" size="16,16" tip="音量" animate="1" skin="btn.volume_zero" show="0"/>
-            <sliderbar name="volumeSlider" pos="[0,18" thumbInRail="0" cursor="hand" width="100" value="50" min="-182" max="73" thumbSkin="skin.SliderPlayvol_png" posSkin="skin.SliderForeVolume_png" bkgndSkin="skin.SliderBackVolume_png"  />
+      <page title="ai_player_page" colorBkgnd="#000000ff">
+          <window name="player_tools" pos="50, -144, -184, -222" skin="_skin.player_tools_bg">
+            <imgbtn name="btn_volume" data="1" pos="20,12" cursor="hand" size="16,16" tip="静音" animate="1" skin="btn.volume"/>
+            <imgbtn name="btn_volume_zero" data="1" pos="20,12" cursor="hand" size="16,16" tip="音量" animate="1" skin="btn.volume_zero" show="0"/>
+            <sliderbar name="volumeSlider" pos="[0,14" thumbInRail="0" cursor="hand" width="100" value="30" min="-182" max="73" thumbSkin="skin.SliderPlayvol_png" posSkin="skin.SliderForeVolume_png" bkgndSkin="skin.SliderBackVolume_png"/>
+            <imgbtn name="btn_cloud_video" pos="-260,10" cursor="hand" tip="回看录像" animate="1" skin="btn.cloud_video"/>
+            <imgbtn name="btn_snapshot" pos="[20,10" cursor="hand" tip="截屏" animate="1" skin="btn.snapshot"/>
+            <imgbtn name="btn_player_set" pos="[20,10" cursor="hand" tip="设置" animate="1" skin="btn.player_set"/>
+            <imgbtn name="btn_four_player" pos="[20,10" cursor="hand" tip="四分屏" animate="1" skin="btn.four_player"/>
+            <imgbtn name="btn_face_recognition" pos="[20,10" cursor="hand" tip="人脸识别" animate="1" skin="btn.face_recognition"/>
+            <imgbtn name="btn_screen_full" pos="[20,10" cursor="hand" tip="全屏" animate="1" skin="btn.screen_full"/>
           </window>
+        <window pos="-222,0,-0,-0" colorBkgnd="@color/mainbg">
+          <text pos="22, 14" colorText="@color/aidestext" font="adding:2">识别结果</text>
+
         </window>
-        <window pos="-222,14,-0,-0">
-          <text pos="0, 2" colorText="@color/aidestext" font="adding:2">识别结果</text>
-        </window>
-        <window pos="14,-184,-244,-0">
-          <text pos="0, 8" colorText="@color/aidestext" font="adding:2">摄像机抓拍人脸</text>
+        <window pos="0,-184,-222,-0" colorBkgnd="@color/mainbg">
+          <text pos="14, 8" colorText="@color/aidestext" font="adding:2">摄像机抓拍人脸</text>
           <hr pos="[14,18,-0,@2" lineStyle="solid" mode="horizontal" colorLine="@color/aidestext" size="1"/>
+          <tileview pos="14, [12,-22,-18" name="camera_image" wantTab="1" show="1" marginSize="5">
+            <template itemWidth="180" itemHeight="118"  colorHover="#cccccc" colorSelected="#0000ff" trackMouseEvent="0" skin="item_bg">
+              <img pos="0,0,@118,@88" offset="-0.5,0" skin="iermu_thumb" name="img_file_icon" scaring="1"/>
+              <window pos="[6,58, -0, -0" >
+                <text pos="0,0,-0,-0">陌生人</text>
+                <text pos="0,0,-0,-0">智能摄像机</text>
+                <text pos="0,0,-0,-0">0:0:0</text>
+              </window>
+            </template>
+          </tileview>
         </window>
 
       </page>
